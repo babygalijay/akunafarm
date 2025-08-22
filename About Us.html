@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | AkunaFarms</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff8f3;
+            color: #333;
+        }
+       .top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(182, 148, 38, 0.938);
+  padding: 15px 30px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-header .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 20px;
+  color: #2e8b57;
+}
+
+.top-header .center {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.top-header .right a {
+  color: #2e8b57;
+  margin-left: 15px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.top-header .right a:hover {
+  color: #1c5f3b;
+}
+</style>
+    <!-- Header Top Bar -->
+<header class="top-header">
+  <div class="left">
+    <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo" />
+    <span class="company-name">AkunaFarms</span>
+  </div>
+  
+  <div class="center">
+    <p>📍 Abia State, Nigeria &nbsp; | &nbsp; 📞 +234 7039280073 &nbsp; | &nbsp; ✉️ info@akunafarms.com</p>
+  </div>
+  
+  <div class="right">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</header>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+        .about-section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(255,145,77,0.08);
+            padding: 40px 30px;
+        }
+
+        .about-section h2 {
+            color: #ff914d;
+            font-size: 2rem;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .about-section p {
+            font-size: 1.13rem;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .team-section {
+            margin-top: 40px;
+        }
+
+        .team-section h3 {
+            color: #ff914d;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+        }
+
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .team-member {
+            background: #fff3e0;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(255,145,77,0.07);
+            padding: 22px 18px;
+            text-align: center;
+            width: 210px;
+        }
+
+        .team-member img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 3px solid #ff914d;
+        }
+
+        .team-member h4 {
+            margin: 0 0 6px 0;
+            color: #ff914d;
+            font-size: 1.1rem;
+        }
+
+        .team-member p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #555;
+        }
+
+        @media (max-width: 700px) {
+            .about-section {
+                padding: 25px 8px;
+            }
+            .team-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-member {
+                width: 90%;
+            }
+        }
+        </style>
+</head>
+<body>
+    <style>
+        header {
+            background-color: rgba(182, 148, 38, 0.938);
+            display: flex;
+            justify-content: space-between;
+            align-items: relative;
+            box-sizing: border-box;
+            box-shadow: 0 2px 8px rgba(44, 77, 44, 0.07);
+            border: #5a4a1a 1px solid;
+            border-bottom: 1px solid #e0e0e0;
+            font-family: Arial, sans-serif;
+            padding: 20px 30px;
+            color: #fff;
+        }
+        .header-left {
+            display: flex;
+            align-items: left;
+            gap: 15px;
+        } 
+        .header-left img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .header-info {
+            font-size: 0.9rem;
+            color: #fff;
+        }
+        .header-info span {
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>
+        
+    <nav>
+        <style>
+            nav {
+        background: #d8caaa;
+        box-shadow: 0 2px 8px rgba(44, 77, 44, 0.07);
+        font-family: Arial, sans-serif;
+        padding: 0;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 18px;
+        height: 60px;
+    }
+    .nav-left, .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+    .nav-left > .nav-item, .nav-right > .nav-item {
+        position: relative;
+    }
+    .nav-item {
+        color: #4d9c4d;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 8px 10px;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+        cursor: pointer;
+    }
+    .nav-item:hover, .nav-item:focus {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+   .nav-item i {
+        margin-right: 6px;
+        font-size: 1.2rem;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f6ef;
+        min-width: 200px;
+        box-shadow: 0 2px 8px rgba(44, 77, 44, 0.1);
+        border-radius: 4px;
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: #2d7a2d;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.95rem;
+        transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-content a:hover, .dropdown-content a:focus {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+
+
+    .dropdown-content a:hover {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+    .searchbar {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .searchbar input[type="text"] {
+        width: 100px;
+        padding: 7px 12px;
+        border: 1px solid #b69426;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        font-size: 1rem;
+        background: #f9f6ef;
+        color: #2d7a2d;
+        transition: border 0.2s;
+    }
+    .searchbar button {
+        padding: 7px 10px;
+        border: 1px solid #b69426;
+        border-left: none;
+        border-radius: 0 10px 10px 0;
+        background: #b69426;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .searchbar button:hover {
+        background: #2d7a2d;
+        color: #fff;
+    }
+    .icon-btn {
+        background: none;
+        border: none;
+        color: #2d7a2d;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 8px 10px;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .icon-btn:hover, .icon-btn:focus {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+
+    @media (max-width: 900px) {
+        .navbar {
+            flex-direction: column;
+            align-items: stretch;
+            height: auto;
+            gap: 10px;
+        }
+        .searchbar {
+            margin: 10px 0;
+        }
+    } 
+        </style>
+    <div class="navbar">
+        <!-- Left Side -->
+        <div class="nav-left">
+            <a href="#" class="nav-item"><i class="fas fa-home"></i>Home</a>
+            <a href="#" class="nav-item">
+            <div class="dropdown nav-item">
+                <span><i class="fa fa-store"></i> <i class="fa fa-caret-down"></i>Shop</span>
+                <div class="dropdown-content">
+                    <a href="#">Herbs</a>
+                    <a href="#">Ebooks</a>
+                    <a href="#">Spices</a>
+                    <a href="#">Herbal Teas</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">Supplements</a>
+                </div>
+            </div>
+            <a href="#" class="nav-item"><i class="fa fa-heartbeat"></i>Health Benefits</a>
+        </div>
+        <!-- Center Searchbar -->
+        <div class="searchbar">
+            <form action="#" method="get" style="display: flex;">
+                <input type="text" placeholder="Search products, articles..." name="q" aria-label="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- Right Side -->
+        <div class="nav-right">
+            <a href="About Us.html" class="nav-item"><i class="fa fa-info-circle"></i> About Us</a>
+            <a href="FAQs.html" class="nav-item"><i class="fa fa-question-circle"></i> FAQs</a>
+            <a href="Contact Us.html" class="nav-item"><i class="fa fa-envelope"></i> Contact Us</a>
+            <a href="Blog.html" class="nav-item"> <i class="fas fa-pencil-alt"></i>Blog</a>
+
+            <div class="dropdown nav-item">
+                <a href="Our Services.html" class="fas fa-bars"></a>
+                <div class="dropdown-content">
+                    <a href="Track Order.html">Track Order</a>
+                    <a href="Our Services.html">Our Services</a>
+                    <a href="Recipes.html">Recipes</a>
+            </div>
+        </div>
+            <div class="dropdown nav-item">
+                <a href="user.html" class="fas fa-user"></a>
+                <div class="dropdown-content">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown nav-item">
+            <a href="cart.html" class="icon-btn" aria-haspopup="true" aria-expanded="false" title="Cart">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="#">View Cart</a>
+                <a href="#">Checkout</a>
+            </div>
+    </div>
+    <div class="book-now-container">
+        <a href="Book Now.html" class="book-now-btn" aria-label="Book Now" title="Book Now" style="display: flex; align-items: right; justify-content: right; color: #2d7a2d; padding: 12px solid; border-radius: 8px; outline: olive; hover: rgb(218, 150, 24); font-weight: bold; box-shadow: 0 4px 12px rgba(44, 77, 44, 0.1); margin-top: 20px;"> Book Now
+        </a>
+    </div>
+</nav>
+    <main>
+        <style>
+           .about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.about-image {
+  width: 40%;
+  max-width: 300px;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.mission-section {
+  background: url('images/backround.png') center/cover no-repeat;
+  opacity: 2.56em;
+  padding: 60px 20px;
+  color: #fff;
+  position: relative;
+}
+
+.mission-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.mission-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.mission-table th,
+.mission-table td {
+  padding: 16px;
+  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+ 
+        </style>
+        <section class="about-section">
+  <div class="about-container">
+    <img src="images/akunafarms.JPG" alt="Founder Image" class="about-image" />
+    <div class="about-text">
+      <h2>Our Story</h2>
+      <p>
+        Founded in 2021, AkunaFarms started as a vision to bring nature closer to people through sustainable farming and digital platforms. It grew from a modest herb garden into an all-in-one wellness and agro-tech hub. We have faced droughts, setbacks, supplier withdrawals, and self-doubt — but we also celebrated our first 100 customers, our first product launch, and our expansion into global consultations.
+      </p>
+
+      <h3>Meet the Founder</h3>
+      <p>
+        Agada Victoria is a certified Botanist, full-stack Web Developer, and Agricultural Consultant with a passion for healing and innovation. She began in the fields, collecting herbs and testing formulas, but her heart knew nature deserved a modern voice. That’s how she built AkunaFarms — combining science, soul, and systems.
+      </p>
+      <p>
+        After years of offering farm setup services and herb sourcing, Jane added tech to her toolkit. She learned to code, built the platform herself, and began offering resources like ebooks, workshops, and online bookings for wellness services.
+      </p>
+
+      <h3>Expanding Into Wellness</h3>
+      <p>
+        Today, we don’t just sell products — we guide inner healing. AkunaFarms offers:
+        <ul>
+          <li>Yoga and breathwork consultations</li>
+          <li>Guided meditation sessions</li>
+          <li>Holistic therapies and herbal remedies</li>
+        </ul>
+        We believe peace is planted both in the soil and in the soul.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="mission-section">
+  <div class="mission-overlay">
+    <h2>Our Principles</h2>
+    <table class="mission-table">
+      <tr>
+        <th>Mission</th>
+        <th>Vision</th>
+        <th>Values</th>
+      </tr>
+      <tr>
+        <td>To promote inner and outer wellness through plants, technology, and education.</td>
+        <td>To be Africa's most trusted digital nature platform — connecting herbalism, agriculture, and mindfulness.</td>
+        <td>Integrity, Wholeness, Sustainability, Balance, Transparency, Empowerment</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+    <footer>
+        <style>
+          .site-footer {
+  background-color: rgba(182, 148, 38, 0.938);
+  color: #f1f1f1 ;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-socials a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-icons a {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+</style>
+        <footer class="site-footer">
+  <div class="footer-content">
+    <!-- Logo & Name -->
+    <div class="footer-brand">
+      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+      <h2>AkunaFarms</h2>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@akunafarms.com</p>
+      <p>Phone: +234 801 234 5678</p>
+      <p>Location: Lagos, Nigeria</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-socials">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

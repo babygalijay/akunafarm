@@ -1,0 +1,219 @@
+<!--Book Now-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Now | AkunaFarm</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f8f8f8;
+        }
+        nav {
+            background: #8d6748;
+            padding: 0 32px;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            height: 56px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar li {
+            display: inline-block;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px 10px;
+            display: flex;
+            align-items: center;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 4px;
+        }
+        .navbar a:hover {
+            background: #a9825a;
+            color: #fffbe7;
+        }
+        .navbar i {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+        header {
+            background: rgba(182, 148, 38, 0.938);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 32px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left img {
+            height: 48px;
+            margin-right: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/image/favicon.png" alt="AkunaFarm Logo">
+            <h1>AKUNAFARMS</h1>
+        </div>
+        <div class="header-left">
+            <nav>
+                <ul class="navbar">
+                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="Our Services.html"><i class="fas fa-briefcase"></i>Our Services</a></li>
+                    <li><a href="healthbenefits.html"><i class="fas fa-heartbeat"></i>Health Benefits</a></li>
+                    <li><a href="Contact Us.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
+                    <li><a href="Recipes.html"><i class="fas fa-utensils"></i>Recipes</a></li>
+                    <li><a href="Cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="Shop.html"><i class="fas fa-store"></i>Shop</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="booking-section">
+            <h2>Book Your Visit</h2>
+            <p>Experience the beauty of AkunaFarm with a personalized visit. Fill out the form below to schedule your tour.</p>
+            <form action="submit_booking.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit Booking</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <style>
+          .site-footer {
+  background-color: rgba(182, 148, 38, 0.938);
+  color: #f1f1f1 ;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-socials a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-icons a {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+</style>
+        <footer class="site-footer">
+  <div class="footer-content">
+    <!-- Logo & Name -->
+    <div class="footer-brand">
+      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+      <h2>AkunaFarms</h2>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@akunafarms.com</p>
+      <p>Phone: +234 801 234 5678</p>
+      <p>Location: Lagos, Nigeria</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-socials">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+  </div>
+  </footer>
+</body>
+</html>

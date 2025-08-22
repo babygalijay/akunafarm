@@ -1,0 +1,1566 @@
+
+<!-- Header -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<header style="background: rgba(182, 148, 38, 0.938);padding:0 32px;height:74px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;">
+        <img src="images/image/favicon.png" alt="Logo" style="height:48px;width:48px;border-radius:8px;margin-right:14px;box-shadow:0 2px 8px rgba(0,0,0,0.10);background:#fff;">
+        <span style="font-size:2rem;font-weight:700;color:#eaf3e1;letter-spacing:1px;font-family:'Segoe UI',sans-serif;">AKUNAFARMS</span>
+    </div>
+    <nav style="display:flex;align-items:center;gap:22px;">
+        <a href="index.html" title="Home" style="color:#eaf3e1;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <i class="fas fa-home"></i> <span style="font-size:1rem;">Home</span>
+        </a>
+        <a href="cart.html" title="Cart" style="color:#eaf3e1;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <i class="fas fa-shopping-cart"></i> <span style="font-size:1rem;">Cart</span>
+        </a>
+        <a href="login.html" title="Login" style="color:#eaf3e1;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <i class="fas fa-sign-in-alt"></i> <span style="font-size:1rem;">Login</span>
+        </a>
+        <a href="register.html" title="Register" style="color:#eaf3e1;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <i class="fas fa-user-plus"></i> <span style="font-size:1rem;">Register</span>
+        </a>
+        <a href="Book Now.html" title="Book Now" style="color:#eaf3e1;font-size:1.3rem;text-decoration:none;display:flex;align-items:center;gap:6px;">
+            <i class="fas fa-calendar"></i> <span style="font-size:1rem;">Book Now</span>
+        </a>
+        <form action="search.html" method="get" style="margin-left:18px;display:flex;align-items:center;background:#223018;border-radius:6px;padding:4px 10px;">
+            <input type="text" name="q" placeholder="Search products..." style="border:none;background:transparent;color:#eaf3e1;font-size:1rem;outline:none;width:140px;">
+            <button type="submit" style="background:none;border:none;color:#b7d7a8;font-size:1.2rem;cursor:pointer;">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </nav>
+</header>
+<div style="max-width:1200px;margin:40px auto;padding:0 16px;" class="container"></div>
+    <!-- Add a spice-themed background image for visual interest -->
+    <style>
+        body {
+            background: url('images/spice.pg 2.jpg') repeat center center fixed;
+            background-size: cover;
+        }
+    </style><!-- Category Filter -->
+<label for="category">Filter by Category:</label>
+<select id="category" onchange="filterProducts()">
+  <option value="all">Products</option>
+  <option value="spices">Spices</option>
+  <option value="herbs">Herbs</option>
+  <option value="teas">Teas</option>
+  <option value="seedings">Seedlings</option>
+  <option value="accessories">Accessories</option>
+  <option value="ebook">Ebook</options>
+  <option value="oil and moisturizer">oil and moisturizer</option>
+</select>
+
+
+       
+        <div class="discount-banner" style="background:#ffb347;padding:16px 0;display:flex;justify-content:center;align-items:center;margin-bottom:32px;">
+            <div style="background:#fff;color:#4a5d23;border-radius:8px;padding:12px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+                <h2 style="margin:0;font-size:1.5rem;">Limited Time Offer!</h2>
+                <p style="margin:4px 0;font-size:1rem;">Get 20% off on your first order with code <strong>WELCOME20</strong></p>
+            </div>
+    </div>
+    <div style="background:beige;padding:32px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+        <h2 style="text-align:center;margin-bottom:24px;color:#4a5d23;">Explore Our Products</h2>
+        <p style="text-align:center;font-size:1.2rem;color:#4a5d23;">Discover the best herbs, spices, and accessories for your kitchen!</p>
+    <div style="display:flex;flex-wrap:wrap;gap:28px;justify-content:center;">
+         </div>
+         <!-- product card -->
+          <main>
+    <style>
+            .product-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 16px;
+                padding: 20px;
+            }
+            .product-card {
+                background: rgba(97, 199, 38, 0.836);
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.2s;
+                position: relative;
+                text-align: center;
+                padding: 16px;  
+            }
+            #category {
+                 margin: 20px 0;
+                 padding: 8px;
+            }
+            .product-card:hover {
+                transform: scale(1.02);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                background-color: #ffe0b2;
+            }
+            .product-image {
+                width: 100%;
+                height: 150px;
+                border-radius: 8px;
+                margin-bottom: 12px;
+            }
+            .product-info {
+                padding: 8px;
+                
+            }
+            .product-title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: var(--dark-brown);
+                margin-bottom: 8px;
+            }
+            .product-tagline {
+                font-size: 0.9rem;
+                color: #555;
+                margin-bottom: 8px;
+            }
+        </style>
+        <script>
+function filterProducts() {
+  const category = document.getElementById('category').value;
+  const products = document.querySelectorAll('.product-card');
+
+  products.forEach(product => {
+    const productCategory = product.getAttribute('data-category');
+
+    if (category === 'all' || category === productCategory) {
+      product.style.display = 'inline-block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+</script>
+
+       <div class="product-grid">
+        <div class="product-card" data-category="herbs">
+            <img src="images/turmeric.jpg" alt="Organic Turmeric Powder" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Turmeric Powder</h2>
+                <p class="product-tagline">Pure, sun-dried, and hand-ground for maximum potency.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.5</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">₦5,000</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="herbs and spice">
+            <style>
+                .product-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                    gap: 16px;
+                    padding: 20px;
+                }
+            </style>
+            <img src="images/image/cardamon.jpg" alt="Organic Cardamom" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Cardamom</h2>
+                <p class="product-tagline">Aromatic pods for sweet and savory dishes.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-value">5.0</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">₦25,000</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="spices">
+            <img src="images/image/using akunafarms, package negro pepper(uda).jpg" alt="Organic Black Pepper" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Black Pepper</h2>
+                <p class="product-tagline">Freshly ground for maximum flavor and aroma.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">₦7,500</span>
+                    
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="herbs">
+            <img src="images/image/chiaseed.jpg" alt="Organic Chia Seeds" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Chia Seeds</h2>
+                <p class="product-tagline">Nutritious seeds packed with omega-3 fatty acids.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.7</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">₦10,000</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories">
+            <img src="images/image/herb grinder.jpeg" alt="Herb Grinder" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Herb Grinder</h2>
+                <p class="product-tagline">Durable and efficient for all your grinding needs.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.6</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">₦8,500</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category=" spices">
+            <img src="images/image/cloves.jpg" alt="Organic Cloves" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Cloves</h2>
+                <p class="product-tagline">Whole dried buds, rich in flavor and aroma.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.7</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$10.99</span>
+                    <span class="old-price">$13.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card"data-category="herbs" >
+            <img src="images/WhatsApp Image 2025-06-02 at 10.11.18_f231cffd.jpg" alt="Organic Ginger" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Ginger</h2>
+                <p class="product-tagline">Freshly ground, zesty and warming spice.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-value">5.0</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$9.99</span>
+                    <span class="old-price">$12.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="spices">
+            <img src="images/image/garlic powder.jpg" alt="Organic Garlic" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Garlic</h2>
+                <p class="product-tagline">Pungent, flavorful, and freshly dried cloves.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$8.99</span>
+                    <span class="old-price">$11.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card"data-category="accessories" >
+            <img src="images/image/spicsetcart.jpeg" alt="spice cart" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">spice cart</h2>
+            <p class="product-tagline">best for storing spice jars</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$18.99</span>
+                <span class="old-price">$22.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="herbs">
+            <img src="images/image/cloves.jpg" alt="Organic Cloves" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Organic Cloves</h2>
+            <p class="product-tagline">Whole dried buds, rich in flavor and aroma.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.7</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$10.99</span>
+                <span class="old-price">$13.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="Seedlings" >
+            <img src="images/pumkin.jpg" alt="Organic Pumpkin" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Organic Pumpkin</h2>
+            <p class="product-tagline">Fresh, sweet, and nutrient-rich pumpkin pieces.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$7.99</span>
+                <span class="old-price">$10.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="ebook" >
+            <img src="images/image/ebook learn herb.jpg" alt="eBook: Herbal Remedies" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">eBook: Herbal Remedies</h2>
+            <p class="product-tagline">Comprehensive guide to natural healing herbs.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$5.99</span>
+                <span class="old-price">$9.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="ebook">
+            <img src="images/image/meditation ebbok.png" alt="eBook: Meditation" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">eBook: Meditation</h2>
+            <p class="product-tagline">Unlock inner peace with guided meditation techniques.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$4.99</span>
+                <span class="old-price">$7.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="oil and moisturizer">
+            <img src="images/image/hair oil.jpg" alt=" Hair Oil" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title"> Hair Oil</h2>
+            <p class="product-tagline">Nourish your hair with natural oils and remedies.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$5.99</span>
+                <span class="old-price">$9.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="ebook">
+            <img src="images/spice foru.png" alt="eBook: Spice Formulation" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">eBook: Spice Formulation</h2>
+            <p class="product-tagline">Master the art of blending spices for every dish.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.6</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$6.99</span>
+                <span class="old-price">$11.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card"data-category="teas">
+            <img src="images/WhatsApp Image 2025-06-02 at 07.57.26_e44232b8.jpg" alt="herbal tea for skin, hair, nails" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Herbal Tea for Skin, Hair, Nails</h2>
+            <p class="product-tagline">Nourishing blend for beauty from within.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.6</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$6.99</span>
+                <span class="old-price">$11.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card" data-category="herbs">
+            <img src="images/WhatsApp Image 2025-06-02 at 07.57.27_b10e560d.jpg" alt="moringa powder" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Moringa Powder</h2>
+            <p class="product-tagline">Superfood powder rich in vitamins and minerals.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.7</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$7.99</span>
+                <span class="old-price">$10.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        </div>
+
+        <div class="product-card" data-category="ebook">
+            <img src="images/image/ebook oilk.jpg" alt="eBook: Oil & Tincture" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">eBook: Oil & Tincture</h2>
+            <p class="product-tagline">DIY guide to herbal oils and tinctures at home.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$5.49</span>
+                <span class="old-price">$8.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="ebook" >
+            <img src="images/image/ebook spirit.jpg" alt="eBook: Spiritual Awaken" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">eBook: Spiritual Awaken</h2>
+            <p class="product-tagline">Journey to spiritual growth and enlightenment.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.9</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$6.49</span>
+                <span class="old-price">$10.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="teas">
+            <img src="images/WhatsApp Image 2025-06-02 at 07.57.27_e3b5883f.jpg" alt="Anti-diabetic Tea" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Anti-diabetic Tea</h2>
+            <p class="product-tagline">Herbal blend to support healthy blood sugar levels.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$7.49</span>
+                <span class="old-price">$11.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+            <div class="product-card" data-category="spices">
+                <img src="images/alllpur.jpg" alt="All Purpose Spice" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">All Purpose Spice</h2>
+                    <p class="product-tagline">Versatile blend for all your cooking needs.</p>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$4.99</span>
+                <span class="old-price">$6.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="spices">
+            <img src="images/curr.jpg" alt="Curry Spice" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Curry Spice</h2>
+            <p class="product-tagline">Rich, aromatic blend for classic curry dishes.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.7</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$5.99</span>
+                <span class="old-price">$8.49</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="spices">
+            <img src="images/imag" alt="Jollof Spice" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Jollof Spice</h2>
+            <p class="product-tagline">Perfect blend for authentic jollof rice flavor.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$5.49</span>
+                <span class="old-price">$7.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="herbs">
+            <img src="images/image/sage.jpg" alt="Sage Spice" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Sage Spice</h2>
+                <p class="product-tagline">Earthy flavor for savory dishes.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.5</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$3.99</span>
+                    <span class="old-price">$5.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="herbs">
+            <img src="images/image/drytyme.jpg" alt="Thyme Spice" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Thyme Spice</h2>
+                <p class="product-tagline">Aromatic herb for Mediterranean dishes.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.6</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$3.49</span>
+                    <span class="old-price">$5.49</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="spices">
+            <img src="images/chicksp.jpg" alt="Chicken Spice" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Chicken Spice</h2>
+            <p class="product-tagline">Specially crafted for juicy, flavorful chicken.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$4.99</span>
+                <span class="old-price">$6.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="spices">
+            <img src="images/befspic.jpg" alt="Beef Spice" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Beef Spice</h2>
+            <p class="product-tagline">Bold flavors for delicious beef dishes.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$5.49</span>
+                <span class="old-price">$7.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="spices">
+            <img src="images/pepesousp.jpg" alt="Pepersoup Spice" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Pepersoup Spice</h2>
+            <p class="product-tagline">Traditional blend for spicy, warming soups.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.6</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$4.99</span>
+                <span class="old-price">$6.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="teas">
+            <img src="images/image/lungs detox.jpg" alt="Lungs Detox Tea" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Lungs Detox Tea</h2>
+            <p class="product-tagline">Herbal blend to support healthy breathing.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$8.99</span>
+                <span class="old-price">$12.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="teas">
+            <img src="images/WhatsApp Image 2025-06-02 at 07.57.26_b57ca5bd.jpg" alt="anti-aging herbal tea" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Anti-Aging Herbal Tea</h2>
+            <p class="product-tagline">Revitalize your skin with this herbal blend.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.9</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$12.99</span>
+                <span class="old-price">$16.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="teas">
+            <img src="images/WhatsApp Image 2025-06-02 at 07.57.26_bb16fc40.jpg" alt="ladies herbal tea" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Ladies Herbal Tea</h2>
+            <p class="product-tagline">A soothing blend for women's wellness.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$10.99</span>
+                <span class="old-price">$14.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        </div>
+        <div class="product-card" data-category="ebook">
+            <img src="images/image/msh.jpg" alt="complete guilde on spirituality, meditation and herbalism" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Complete Guide on Spirituality, Meditation and Herbalism</h2>
+            <p class="product-tagline">A comprehensive guide to enhance your spiritual journey.</p>
+            </div>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.9</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$19.99</span>
+                <span class="old-price">$29.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="teas">
+            <img src="image/aphro-male.jpg" alt="Aphro-Male" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Aphro-Male</h2>
+            <p class="product-tagline">Herbal blend for male vitality and energy.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$14.99</span>
+                <span class="old-price">$19.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="oils">
+            <img src="images/hairbutterbg.jpg" alt="Hair Butter" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Hemp Hair Butter</h2>
+                <p class="product-tagline">Nourishing butter for soft and manageable hair.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.7</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$6.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/image/honey.jpg" alt="Organic Honey" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Organic Honey</h2>
+                <p class="product-tagline">Pure and natural honey for a healthy lifestyle.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-value">5.0</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$9.99</span>
+                    <span class="old-price">$12.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    
+        <div class="product-card" data-category="accessories">
+            <img src="images/image/smokeset.jpeg" alt="smoke set" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Complete Smoke Set</h2>
+                <p class="product-tagline">Complete set of smoking accessories.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$29.99</span>
+                    <span class="old-price">$39.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories">
+            <img src="images/image/saltcon.jpeg" alt="salt container" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Salt Container</h2>
+                <p class="product-tagline">Stylish container for your favorite spices.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$12.99</span>
+                    <span class="old-price">$16.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="teas">
+            <img src="image/aphro-female.jpg" alt="Aphro-Female" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Aphro-Female</h2>
+            <p class="product-tagline">Herbal blend for female wellness and balance.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-value">5.0</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$14.99</span>
+                <span class="old-price">$19.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="oil and moisturizer">
+            <img src="images/hairoil.jpg" alt="hemp hair oil" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Hemp Hair Oil</h2>
+            <p class="product-tagline">Revitalizing oil for healthy hair growth.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$9.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="teas">
+            <img src="images/burnbl.jpg" alt="BurnBlend" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">BurnBlend</h2>
+            <p class="product-tagline">Metabolism-boosting herbal tea for weight management.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.7</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$11.99</span>
+                <span class="old-price">$15.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div> 
+        <div class="product-card"data-category="tea" >
+            <img src="images/image/package.png" alt="EnergyBlend" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">combipack</h2>
+            <p class="product-tagline">packs of spice and herbs.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.9</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$12.99</span>
+                <span class="old-price">$16.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories" >
+            <img src="images/image/spicegrinder.jpeg" alt="accessories-grinder" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Spice Grinder</h2>
+                <p class="product-tagline">Efficient and durable for all your grinding needs.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$5.99</span>
+                    <span class="old-price">$9.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories">
+            <img src="images/image/striner.jpeg" alt="accessories-tea strainer" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Tea Strainer</h2>
+                <p class="product-tagline">Efficient and durable for all your brewing needs.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$5.99</span>
+                    <span class="old-price">$9.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+           
+        <div class="product-card" data-category="accessories">
+            <img src="images/image/teacupset.jpeg" alt="accessories-teapot" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Tea cup set</h2>
+                <p class="product-tagline">Elegant design for serving tea.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$15.99</span>
+                    <span class="old-price">$19.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories">
+            <img src="images/image/teapack.jpeg" alt="accessories-tea infuser" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Tea jars</h2>
+                <p class="product-tagline">Perfect for storing loose leaf tea.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$3.99</span>
+                    <span class="old-price">$5.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories" >
+            <img src="image/tea-cup.jpg" alt="accessories-tea cup" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Tea Cup</h2>
+                <p class="product-tagline">Stylish and durable for your favorite brews.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$7.99</span>
+                    <span class="old-price">$10.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card"data-category="accessories" >
+            <img src="images/image/herbs jar.jpeg" alt="accessories-tea sampler" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Herbs Jar </h2>
+                <p class="product-tagline">Perfect for Herbs Storage.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$9.99</span>
+                    <span class="old-price">$12.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card"data-category="accessories" >
+            <img src="images/image/infuser.jpeg" alt="accessories-tea infuser" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Tea Infuser</h2>
+                <p class="product-tagline">Perfect for brewing loose leaf tea.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$4.99</span>
+                    <span class="old-price">$7.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="oil and moisturizers">
+            <img src="images/hairoil.jpg" alt="herbal hair oil" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Herbal Hair Oil</h2>
+                <p class="product-tagline">Nourishing oil for healthy hair growth.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.7</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$9.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="teas">
+            <img src="images/WhatsApp Image 2025-06-02 at 07.57.26_55dab8ce.jpg" alt="herbal tea" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">anti-hypertensive tea</h2>
+                <p class="product-tagline">Promotes healthy blood pressure levels.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$19.99</span>
+                    <span class="old-price">$24.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories">
+            <img src="images/Card - Discover the Flavors of Tea.png" alt="accessories-tea sampler" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Tea Sampler</h2>
+                <p class="product-tagline">Explore a variety of premium teas.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.9</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$15.99</span>
+                    <span class="old-price">$19.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="oil and moisturizers">
+            <img src="images/hairbutterbg.jpg" alt="herbs-hair butter" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Hair Butter</h2>
+                <p class="product-tagline">Nourishing butter for soft and manageable hair.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$3.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="oil and moisturizers">
+            <img src="images/hairboostoil.jpg" alt="herbal hair oil" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Hemp Hair Boost Oil</h2>
+                <p class="product-tagline">Nourishing oil for healthy hair growth.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.6</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$4.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="oil and moisturizers">
+            <img src="images/hairbutterpck.jpg" alt="herbal hair moisturizer" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Hemp Hair Butter</h2>
+                <p class="product-tagline">Nourishing butter for soft and manageable hair.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.7</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$2.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="herbs">
+            <img src="images/ginseng.jpg" alt="herbs-ginseng" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Ginseng</h2>
+                <p class="product-tagline">Boost your energy and focus.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.9</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$12.99</span>
+                    <span class="old-price">$16.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="images/WhatsApp Image 2025-06-02 at 07.57.27_0a883593.jpg" alt="moringa oil" class="product-image">
+            <div class="product-info">
+            <h2 class="product-title">Moringa Oil</h2>
+            <p class="product-tagline">Nourish and rejuvenate your skin with Moringa Oil.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$8.99</span>
+                <span class="old-price">$12.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/akunadriunk.jpg" alt="fruit drink" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Fruit burst</h2>
+                <p class="product-tagline">Refreshing fruit drink for a burst of flavor.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.7</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">₦15,500</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories">
+            <img src="images/tea-storage.jpg" alt="accessories-tea storage" class="product-image">
+            <div class="product-info">
+                <h2 class="product-title">Tea Storage</h2>
+                <p class="product-tagline">Keep your tea fresh and flavorful.</p>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-value">4.8</span>
+                </div>
+                <div class="product-price">
+                    <span class="price">$12.99</span>
+                    <span class="old-price">$16.99</span>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+            </div>
+            <div class="product-card" data-category="spices">
+                <img src="images/Allpur.jpg" alt="all purpose spice" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">All Purpose Spice</h2>
+                    <p class="product-tagline">Versatile spice blend for everyday cooking.</p>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="rating-value">4.7</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="price">$3.99</span>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <!-- Hidden content -->
+<div id="moreProducts" style="display: none;">
+    <div class="product-card" data-category="teas">
+        <img src="images/image/energyblend.jpg" alt="EnergyBlend" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">EnergyBlend</h2>
+            <p class="product-tagline">Energizing herbal tea for a boost of vitality.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.8</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$11.99</span>
+                <span class="old-price">$15.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="product-card" data-category="accessories">
+        <img src="images/image/teapot.jpg" alt="Teapot" class="product-image">
+        <div class="product-info">
+            <h2 class="product-title">Teapot</h2>
+            <p class="product-tagline">Elegant teapot for brewing your favorite teas.</p>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-value">4.9</span>
+            </div>
+            <div class="product-price">
+                <span class="price">$24.99</span>
+                <span class="old-price">$29.99</span>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- View More Button -->
+<button id="viewMoreBtn" class="btn btn-primary">View More</button>
+
+        
+        <style>
+            .viewmore {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+            }
+            .viewMoreBtn {
+                background-color: var(--orange);
+                color:#2e3d23;
+                border: 8px solid var(--dark-brown);
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: background 0.3s, transform 0.3s;
+            }
+            .view-more-btn:hover {
+                background-color: var(--dark-brown);
+                transform: scale(1.05);
+            }
+            .view-more-btn:focus {
+                outline: 2px solid var(--orange);
+                box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.5);
+            }
+
+        </style>
+        <style>
+/* Shop dropdown styles */
+.shop-dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 24px 0;
+}
+.shop-dropdown-btn {
+    background-color: #6b8e23;
+    color: #fff;
+    padding: 18px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+.shop-dropdown-btn:hover {
+    background-color: #557a1f;
+}
+.shop-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: #fff;
+    min-width: 340px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    border-radius: 8px;
+    padding: 24px 16px;
+    z-index: 10;
+}
+.shop-dropdown:hover .shop-dropdown-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+.shop-product-card {
+    background: #f8faf5;
+    border-radius: 8px;
+}
+
+</style>
+
+<footer>
+        <style>
+          .site-footer {
+  background-color: rgba(182, 148, 38, 0.938);
+  color: #f1f1f1 ;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-socials a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-icons a {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+</style>
+        <footer class="site-footer">
+  <div class="footer-content">
+    <!-- Logo & Name -->
+    <div class="footer-brand">
+      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+      <h2>AkunaFarms</h2>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@akunafarms.com</p>
+      <p>Phone: +234 801 234 5678</p>
+      <p>Location: Lagos, Nigeria</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-socials">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+  </div>
+  </footer>
+
+  <script>
+  const btn = document.getElementById("viewMoreBtn");
+  const more = document.getElementById("moreProducts");
+
+  btn.addEventListener("click", () => {
+    if (more.style.display === "none") {
+      more.style.display = "flex";
+      btn.textContent = "View Less";
+    } else {
+      more.style.display = "none";
+      btn.textContent = "View More";
+    }
+  });
+</script>
+
+</body>
+</html>

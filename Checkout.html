@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Link to index.html in the navigation -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - AkunaFarm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background:whitesmoke;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(182, 148, 38, 0.938);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .logo {
+            font-size: 2rem;
+            color: whitesmoke;
+            margin-right: 15px;
+        }
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: whitesmoke;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-left: auto;
+            position: sticky;
+        }
+        nav a {
+            text-decoration: none;
+            color: whitesmoke;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ff1744;
+        }
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(216,27,96,0.12);
+            padding: 32px 28px;
+        }
+        h2 {
+            color: #d81b60;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border: 1.5px solid #ffb6c1;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border 0.2s;
+        }
+        .payment-option input[type="radio"] {
+            margin-right: 14px;
+            accent-color: #d81b60;
+        }
+        .payment-option:hover {
+            border: 1.5px solid #ff1744;
+        }
+        .pay-btn {
+            width: 100%;
+            margin-top: 28px;
+            padding: 14px;
+            background: linear-gradient(90deg, #ffb6c1 0%, #ff1744 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .pay-btn:hover {
+            background: linear-gradient(90deg, #ff1744 0%, #ffb6c1 100%);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 8px;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 10px;
+            }
+            nav {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/image/favicon.png" alt="akunafarms Logo" style="height:40px; margin-right:15px;">
+        <span class="company-name">AKUNAFARM</span>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="Shop.html"><i class="fas fa-store"></i> Shop</a>
+            <a href="Book Now.html"><i class="fas fa-calendar"></i> Book Now</a>
+            <a href="Checkout.html"><i class="fas fa-credit-card"></i> Payment</a>
+            <a href="Track Order.html"><i class="fas fa-shipping-fast"></i> Track Order</a>
+             <a href="Blog.html" class="nav-item"> <i class="fas fa-pencil-alt"></i>Blog</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Checkout & Payment</h2>
+        <form>
+            <div class="payment-options">
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="card" checked>
+                    <i class="fas fa-credit-card" style="color:#d81b60; margin-right:8px;"></i>
+                    Credit/Debit Card
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="paypal">
+                    <i class="fab fa-paypal" style="color:#003087; margin-right:8px;"></i>
+                    PayPal
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="cod">
+                    <i class="fas fa-money-bill-wave" style="color:#43a047; margin-right:8px;"></i>
+                    Cash on Delivery
+                </label>
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="upi">
+                    <i class="fas fa-mobile-alt" style="color:#d81b60; margin-right:8px;"></i>
+                    UPI / Mobile Payment
+                </label>
+            </div>
+            <button type="submit" class="pay-btn"><i class="fas fa-lock"></i> Pay Now</button>
+        </form>
+    </div>
+    <footer>
+        <style>
+          .site-footer {
+  background-color: rgba(182, 148, 38, 0.938);
+  color: #f1f1f1 ;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-socials a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-icons a {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+</style>
+        <footer class="site-footer">
+  <div class="footer-content">
+    <!-- Logo & Name -->
+    <div class="footer-brand">
+      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+      <h2>AkunaFarms</h2>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@akunafarms.com</p>
+      <p>Phone: +234 801 234 5678</p>
+      <p>Location: Lagos, Nigeria</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-socials">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

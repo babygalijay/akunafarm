@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services | AkunaFarm</title>
+    <link rel="icon" type="images/icon" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+            color: #333;
+        }
+        header {
+            background: rgba(182, 148, 38, 0.938); 
+            padding: 20px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2rem;
+            color: #2e7d32;
+            margin-right: 15px;
+        }
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        nav {
+            margin-left: auto;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            text-decoration: none;
+            color: rgb(201, 188, 188);
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: sticky;
+        }
+        nav a:hover {
+            color: #1b5e20;
+        }
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 24px;
+        }
+        .service-card {
+            background-color: #fffbe7; /* Light yellow background */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the card */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Subtle shadow */
+            margin-bottom: 20px; /* Space between cards */
+        }
+        .service-card h3 {
+            color: #234; /* Darker text for headings */
+        }
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; /* Space between cards */
+        }
+        .service-card a {
+            display: inline-block;
+            margin-top: 10px;
+            background: #2e7d32; /* Darker green for buttons */
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .service-card a:hover {
+            background: #1b5e20; /* Darker shade on hover */
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="images/favicon.png" alt="AkunaFarm Logo" style="height: 48px; margin-right: 16px;">
+            <div class="company-name">AkunaFarm</div>
+        </div>
+        <nav>
+            <a href="index.html"><i class="fa fa-home"></i>Home</a>
+            <a href="shop.html"><i class="fa fa-shopping-cart"></i>Shop</a>
+            <a href="contact.html"><i class="fa fa-envelope"></i>Contact</a>
+            <a href="about.html"><i class="fa fa-info-circle"></i>About</a>
+            <a href="our-services.html"><i class="fa fa-cogs"></i>Our Services</a>
+            <a href="healthbenefits.html"><i class="fa fa-heart"></i>Health Benefits</a>
+            <a href="blog.html"><i class="fa fa-blog"></i>Blog</a>
+            <a href="user-profile.html"><i class="fa fa-user"></i></a>
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+        </nav>
+    </header>
+    <main>
+        <h2>Our Services</h2>
+        <div class="service-card" style="background: linear-gradient(120deg, #e0f7fa 60%, #f1f8e9 100%); color: #234; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(46,125,50,0.10);">
+            <h3>Book a Session</h3>
+            <p>Schedule a personalized session for Therapy, Meditation, or Consultancy with our experts.</p>
+            <a href="mailto:akunafarm29@yahoo.com?subject=Book%20a%20Session" style="display:inline-block; margin-top:10px; background:#2e7d32; color:#fff; padding:8px 18px; border-radius:4px; text-decoration:none; font-weight:bold;">Book Now</a>
+        </div>
+        <div class="services-list">
+            <div class="service-card" style="background-image: url('images/backround.png'); background-size: cover; background-position: center; color: rgb(240, 245, 237);">
+                <h3>Organic Crop Production</h3>
+                <p>We specialize in growing high-quality organic crops using sustainable farming practices.</p>
+            </div>
+            <div class="service-card" style="background-image: url('images/consultancy.jpg'); background-size: cover; background-position: center; color: #234;">
+                <h3>Farm Consultancy</h3>
+                <p>Our experts provide guidance on modern farming techniques, soil health, and crop management.</p>
+            </div>
+            <div class="service-card" style="background-image: url('images/training.jpg'); background-size: cover; background-position: center; color: #234;">
+                <h3>Agro-Training Programs</h3>
+                <p>We offer training sessions and workshops for aspiring and established farmers.</p>
+            </div>
+            <div class="service-card" style="background-image: url('images/delivery.jpg'); background-size: cover; background-position: center; color: #234;">
+                <h3>Produce Supply & Delivery</h3>
+                <p>Fresh farm produce delivered directly to your business or doorstep.</p>
+            </div>
+            <div class="service-card" style="background-image: url('images/therapy.jpg'); background-size: cover; background-position: center; color: #234;">
+                <h3>Therapy Sessions</h3>
+                <p>Holistic therapy sessions to promote mental and physical well-being for our community.</p>
+            </div>
+            <div class="service-card" style="background-image: url('images/meditation.png'); background-size: cover; background-position: center; color: rgb(233, 238, 243);">
+                <h3>Meditations & Yoga Classes</h3>
+                <p>Join our guided meditation and yoga classes for relaxation and wellness.</p>
+            </div>
+            <div class="service-card" style="background-image: url('images/spice.bg.jpg'); background-size: cover; background-position: center; color: rgb(238, 241, 239);">
+                <h3>Spice Formulation & Herbs Preparation</h3>
+                <p>Custom spice blends and herbal preparations crafted from our organic farm produce.</p>
+            </div>
+            <div class="service-card" style="background-image: url('images/cover.png'); background-size: cover; background-position: center; color: #234;">
+                <h3>Our eBook & Resources</h3>
+                <p>Access our exclusive eBook and other educational materials to enhance your farming knowledge.</p>
+                <a href="ebook.pdf" style="color:#607060; text-decoration:underline; background:rgba(255,255,255,0.7); padding:2px 6px; border-radius:3px;">Download eBook</a>
+            </div>
+            <div class="service-card" style="background-image: url('images/other-services.jpg'); background-size: cover; background-position: center; color: #234;">
+                <h3>Other Services</h3>
+                <p>Contact us to learn more about our full range of agricultural and wellness services.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <style>
+          .site-footer {
+  background-color: rgba(182, 148, 38, 0.938);
+  color: #f1f1f1 ;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-socials a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-icons a {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+</style>
+        <footer class="site-footer">
+  <div class="footer-content">
+    <!-- Logo & Name -->
+    <div class="footer-brand">
+      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+      <h2>AkunaFarms</h2>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@akunafarms.com</p>
+      <p>Phone: +234 801 234 5678</p>
+      <p>Location: Lagos, Nigeria</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-socials">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

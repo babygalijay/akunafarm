@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Order</title>
+    <!-- Favicon using Font Awesome -->
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --earthy-brown: #7c4a03;
+            --light-orange: #ffb366;
+            --white: #fff;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--light-orange);
+            color: var(--earthy-brown);
+        }
+        header {
+            background: rgba(182, 148, 38, 0.938);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo i {
+            margin-right: 0.5rem;
+            color: var(--light-orange);
+        }
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            position: sticky;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--light-orange);
+        }
+        nav a i {
+            margin-right: 0.4em;
+        }
+        main {
+            max-width: 400px;
+            margin: 2rem auto;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(124, 74, 3, 0.08);
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            color: var(--earthy-brown);
+        }
+        .track-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .track-form label {
+            font-weight: 500;
+        }
+        .track-form input[type="text"] {
+            padding: 0.7em;
+            border: 1px solid var(--earthy-brown);
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .track-form button {
+            background: var(--earthy-brown);
+            color: var(--white);
+            border: none;
+            padding: 0.8em;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .track-form button:hover {
+            background: #a05e0e;
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+            }
+            nav {
+                gap: 1rem;
+                margin-top: 0.5rem;
+            }
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/favicon.png" alt="My Logo" style="height:32px; margin-right:0.5rem; vertical-align:middle;">
+            <span>AKUNAFARM</span>
+        </div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i>Home</a>
+            <a href="shop.html"><i class="fas fa-store"></i>Shop</a>
+             <a href="Blog.html" class="nav-item"> <i class="fas fa-pencil-alt"></i>Blog</a>
+           <div class="searchbar">
+            <form action="#" method="get" style="display: flex;">
+                <input type="text" placeholder="Search products, articles..." name="q" aria-label="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div> 
+            <a href="login.html"><i class="fas fa-user"></i>Login/Register</a>
+            <a href="track-order.html"><i class="fas fa-shipping-fast"></i>Check Status</a>
+             <a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Track Your Order</h1>
+        <form class="track-form">
+            <label for="order-id">Order ID</label>
+            <input type="text" id="order-id" name="order-id" placeholder="Enter your order ID" required>
+            <button type="submit"><i class="fas fa-search"></i> Check Status</button>
+        </form>
+    </main>
+    <footer>
+        <style>
+          .site-footer {
+  background-color: rgba(182, 148, 38, 0.938);
+  color: #f1f1f1 ;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-socials a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-icons a {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+</style>
+        <footer class="site-footer">
+  <div class="footer-content">
+    <!-- Logo & Name -->
+    <div class="footer-brand">
+      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+      <h2>AkunaFarms</h2>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@akunafarms.com</p>
+      <p>Phone: +234 801 234 5678</p>
+      <p>Location: Lagos, Nigeria</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-socials">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+  </div>
+    </footer>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        // JavaScript for form submission (optional)
+        document.querySelector('.track-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const orderId = document.getElementById('order-id').value;
+            alert(`Tracking status for Order ID: ${orderId}`);
+            // Here you can add logic to fetch and display the order status
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</body>
+</html>

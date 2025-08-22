@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AKUNAFARMS - Your trusted partner in agriculture.">
+    <meta name="keywords" content="AKUNAFARMS, herbal remedies, buy natural spices, agriculture, farming, services, herbs, spices, herbal teas, supplements, ebooks, accessories, yoga, meditations, therapy, bundles">
+    <title>AKUNAFARMS</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+       .top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(182, 148, 38, 0.938);
+  padding: 15px 30px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-header .left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 20px;
+  color: #2e8b57;
+}
+
+.top-header .center {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.top-header .right a {
+  color: #2e8b57;
+  margin-left: 15px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.top-header .right a:hover {
+  color: #1c5f3b;
+}
+</style>
+    <!-- Header Top Bar -->
+<header class="top-header">
+  <div class="left">
+    <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo" />
+    <span class="company-name">AkunaFarms</span>
+  </div>
+  
+  <div class="center">
+    <p>📍 Abia State, Nigeria &nbsp; | &nbsp; 📞 +234 7039280073 &nbsp; | &nbsp; ✉️ Akunafarm29@yahoo.com</p>
+  </div>
+  
+  <div class="right">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</header>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    nav {
+        background: #d8caaa;
+        box-shadow: 0 2px 8px rgba(44, 77, 44, 0.07);
+        font-family: Arial, sans-serif;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 18px;
+        height: 60px;
+    }
+    .nav-left, .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+    .nav-left > .nav-item, .nav-right > .nav-item {
+        position: relative;
+    }
+    .nav-item {
+        color: #4d9c4d;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 8px 10px;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+        cursor: pointer;
+    }
+    .nav-item:hover, .nav-item:focus {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+   .nav-item i {
+        margin-right: 6px;
+        font-size: 1.2rem;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f6ef;
+        min-width: 200px;
+        box-shadow: 0 2px 8px rgba(44, 77, 44, 0.1);
+        border-radius: 4px;
+        z-index: 1;
+    }
+    .dropdown-content a {
+        color: #2d7a2d;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.95rem;
+        transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-content a:hover, .dropdown-content a:focus {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+
+
+    .dropdown-content a:hover {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+    .searchbar {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .searchbar input[type="text"] {
+        width: 100px;
+        padding: 7px 12px;
+        border: 1px solid #b69426;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        font-size: 1rem;
+        background: #f9f6ef;
+        color: #2d7a2d;
+        transition: border 0.2s;
+    }
+    .searchbar button {
+        padding: 7px 10px;
+        border: 1px solid #b69426;
+        border-left: none;
+        border-radius: 0 10px 10px 0;
+        background: #b69426;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .searchbar button:hover {
+        background: #2d7a2d;
+        color: #fff;
+    }
+    .icon-btn {
+        background: none;
+        border: none;
+        color: #2d7a2d;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 8px 10px;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .icon-btn:hover, .icon-btn:focus {
+        background: #e6e2d3;
+        color: #b69426;
+    }
+
+    @media (max-width: 900px) {
+        .navbar {
+            flex-direction: column;
+            align-items: stretch;
+            height: auto;
+            gap: 10px;
+        }
+        .searchbar {
+            margin: 10px 0;
+        }
+    }
+</style>
+<!-- Link the homepage to the Shop, Our Services, Track Order, About Us, Contact Us, Health Benefits, Recipes, FAQs -->
+<script>
+    // Update navigation links to point to their respective pages
+    document.addEventListener('DOMContentLoaded', function() {
+        // Home
+        document.querySelectorAll('.nav-item').forEach(function(link) {
+            if (link.textContent.trim().includes('Home')) {
+                link.setAttribute('href', 'index.html');
+            }
+            if (link.textContent.trim().includes('Shop')) {
+                link.parentElement.querySelectorAll('.dropdown-content a')[0].setAttribute('href', 'shop.html'); // All Products
+                link.parentElement.querySelectorAll('.dropdown-content a')[1].setAttribute('href', 'herbs.html');
+                link.parentElement.querySelectorAll('.dropdown-content a')[2].setAttribute('href', 'ebooks.html');
+                link.parentElement.querySelectorAll('.dropdown-content a')[3].setAttribute('href', 'spices.html');
+                link.parentElement.querySelectorAll('.dropdown-content a')[4].setAttribute('href', 'herbal-teas.html');
+                link.parentElement.querySelectorAll('.dropdown-content a')[5].setAttribute('href', 'accessories.html');
+                link.parentElement.querySelectorAll('.dropdown-content a')[6].setAttribute('href', 'supplements.html');
+            }
+            if (link.textContent.trim().includes('healthbenefits')) {
+                link.setAttribute('href', 'healthbenefits.html');
+            }
+            if (link.textContent.trim().includes('Recipes')) {
+                link.setAttribute('href', 'Recipes.html');
+            }
+            if (link.textContent.trim().includes('About Us')) {
+                link.setAttribute('href','About Us.html');
+            }
+            if (link.textContent.trim().includes('FAQs')) {
+                link.setAttribute('href', 'FAQs.html');
+            }
+            if (link.textContent.trim().includes('Contact Us')) {
+                link.setAttribute('href', 'Contact Us.html');
+            }
+            if (link.textContent.trim().includes('Track Order')) {
+                link.setAttribute('href', 'Track Order.html');
+            }
+            if (link.textContent.trim().includes('Book Now')) {
+                link.setAttribute('href', 'Book Now.html');
+            }
+            if (link.textContent.trim().includes('Our Services')) {
+                link.setAttribute('href', 'Our Services.html');
+            }
+            if (link.textContent.trim().includes('Account')) {
+                link.setAttribute('href', 'account.html');
+            }
+            if (link.textContent.trim().includes('Login')) {
+                link.setAttribute('href', 'login.html');
+            }
+            if (link.textContent.trim().includes('Register')) {
+                link.setAttribute('href', 'register.html');
+            }
+            if (link.textContent.trim().includes('Cart')) {
+                link.setAttribute('href', 'cart.html');
+            }
+            if (link.textContent.trim().includes('Logout')) {
+                link.setAttribute('href', 'logout.html');
+            }
+            if (link.textContent.trim().includes('Blog')) {
+                link.setAttribute('href', 'Blog.html');
+            }
+        });
+
+        // Footer nav links
+        document.querySelectorAll('footer .footer-nav .nav-item').forEach(function(link) {
+            if (link.textContent.trim() === 'Home') link.setAttribute('href', 'index.html');
+            if (link.textContent.trim() === 'Shop') link.setAttribute('href', 'Shop.html');
+            if (link.textContent.trim() === 'Health Benefits') link.setAttribute('href', 'healthbenefits.html');
+            if (link.textContent.trim() === 'Recipes') link.setAttribute('href', 'Recipes.html');
+            if (link.textContent.trim() === 'About Us') link.setAttribute('href', 'About Us.html');
+            if (link.textContent.trim() === 'Contact Us') link.setAttribute('href', 'Contact Us.html');
+            if (link.textContent.trim() === 'Track Order') link.setAttribute('href', 'Track Order.html');
+            if (link.textContent.trim() === 'Login') link.setAttribute('href', 'login.html');
+            if (link.textContent.trim() === 'Register') link.setAttribute('href', 'register.html');
+            if (link.textContent.trim() === 'Cart') link.setAttribute('href', 'cart.html');
+        });
+    });
+</script>
+
+<!-- track order, login, register, cart, and account pages-->
+<link rel="stylesheet" href="Track Order.html">
+<link rel="stylesheet" href="login.html">
+<link rel="stylesheet" href="register.html">
+<link rel="stylesheet" href="cart.html">
+<link rel="stylesheet" href="account.html">
+</head>
+<body>
+<nav>
+    <div class="navbar">
+        <!-- Left Side -->
+        <div class="nav-left">
+            <a href="#" class="nav-item"><i class="fas fa-home"></i>Home</a>
+            <a href="Shop.html" class="nav-item">
+            <div class="dropdown nav-item">
+                <span><i class="fa fa-store"></i> <i class="fa fa-caret-down"></i>Shop</span>
+                <div class="dropdown-content">
+                    <a href="#">Herbs</a>
+                    <a href="#">Ebooks</a>
+                    <a href="#">Spices</a>
+                    <a href="#">Teas</a>
+                    <a href="#">Accessories</a>
+                    <a href="#">oil and moisturizers</a>
+                </div>
+            </div>
+            <a href="healthbenefits.html" class="nav-item"><i class="fa fa-heartbeat"></i>Health Benefits</a>
+        </div>
+        <!-- Center Searchbar -->
+        <div class="searchbar">
+            <form action="#" method="get" style="display: flex;">
+                <input type="text" placeholder="Search products, articles..." name="q" aria-label="Search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- Right Side -->
+        <div class="nav-right">
+            <a href="About Us.html" class="nav-item"><i class="fa fa-info-circle"></i> About Us</a>
+            <a href="FAQs.html" class="nav-item"><i class="fa fa-question-circle"></i> FAQs</a>
+            <a href="mailto:akunafarms29@yahoo.com" class="nav-item"><i class="fa fa-envelope"></i> Contact Us</a>
+            <a href="Blog.html" class="nav-item"> <i class="fas fa-pencil-alt"></i>Blog</a>
+
+            <div class="dropdown nav-item">
+                <a href="Our Services.html" class="fas fa-bars">Menu</a>
+                <div class="dropdown-content">
+                    <a href="Track Order.html">Track Order</a>
+                    <a href="Our Services.html">Our Services</a>
+                    <a href="Recipes.html">Recipes</a>
+            </div>
+        </div>
+            <div class="dropdown nav-item">
+                <a href="user.html" class="fas fa-user">User</a>
+                <div class="dropdown-content">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown nav-item">
+            <a href="cart.html" class="icon-btn" aria-haspopup="true" aria-expanded="false" title="Cart">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="#">View Cart</a>
+                <a href="#">Checkout</a>
+            </div>
+    </div>
+    <div class="book-now-container">
+        <a href="Book Now.html" class="book-now-btn" aria-label="Book Now" title="Book Now" style="display: flex; align-items: right; justify-content: right; color: #2d7a2d; padding: 12px solid; border-radius: 8px; outline: olive; hover: rgb(218, 150, 24); font-weight: bold; box-shadow: 0 4px 12px rgba(44, 77, 44, 0.1); margin-top: 20px;"> Book Now
+        </a>
+    </div>
+</nav>
+<body>
+    <style>
+        .hero {
+            background: url('images/backround.png') center/cover no-repeat;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 60px 40px 40px 40px;
+            color: #478347;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 4px 24px rgba(44,77,44,0.08);
+            position: relative;
+            margin-bottom: 36px;
+            opacity: 1.95;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            <!-- 
+            /* background: rgba(245, 236, 220, 0.65); */
+             -->
+            z-index: 7;
+            border-radius: 0 0 18px 18px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            color: #2d7a2d;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: white;
+            margin-bottom: 18px;
+        }
+        @media (max-width: 900px) {
+            .products-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+            }
+            .hero {
+                padding: 36px 10px 24px 10px;
+            }
+        }
+    </style>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to AKUNAFARMS</h1>
+            <p>
+                At AKUNAFARMS, we are passionate about delivering nature’s best to your table. 
+                We specialize in premium herbs, spices, teas, and natural wellness products, 
+                all sourced and blended with care. Whether you’re a home cook, a health enthusiast, 
+                or a business seeking quality ingredients, our commitment to excellence and sustainability 
+                ensures you get only the finest.
+                <a href="#more" class="read-more-btn">Read More</a>...
+            </p>
+        </div>
+    </div>
+<style>
+    
+           .best-sellers {
+  padding: 30px;
+  background: #f8f8f8;
+}
+.product-container {
+  display: grid;
+  grid-auto-flow: column; /* forces items to flow horizontally */
+  grid-auto-columns: min-content; /* size columns based on content */
+  gap: 20px;
+  overflow-x: auto; /* enables horizontal scroll if too many items */
+  padding: 10px;
+}
+
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 200px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+.product-card:hover  {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.badge {
+  background-color: #ff6347; /* tomato red or any color you like */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.product-card p {
+  color: #2e8b57;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  background: #2e8b57;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.price {
+  font-weight: bold;
+  color: #2e8b57;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.learn-more {
+  display: inline-block;
+  background: #2e8b57;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.learn-more:hover {
+  background: #246b45;
+}
+</style>
+<section class="Best-sellers">
+   <h2>BEST SELLERS</h2> 
+
+<div class="product-container">
+
+<div class="product-card">
+  <div class="badge">Best Seller</div>
+  <img src="images/image/smokeset.jpeg" alt="Deluxe Smokeset" class="product-image">
+
+  <div class="product-info">
+    <h3>Deluxe Smokeset</h3>
+    <p class="price">₦20,500</p>
+    <p class="description">
+      Complete smokeset kit with premium materials — perfect for a smooth and enjoyable experience.
+    </p>
+    <a href="cart.html" class="add-to-cart">
+    <i class="fas fa-shopping-cart"></i> Add to Cart
+    </a>
+
+    <a href="#" class="learn-more">Learn More</a>
+        </div>
+  </div>
+
+  <div class="product-container">
+    <div class="product-card">
+        <div class="badge">Best Seller</div>
+        <img src="images/image/curryspicemix.jpg" alt="spices" class="product-image">
+
+        <div class="product-info">
+            <h3>Natural spices</h3>
+            <p class="price">₦3500</p>
+            <p class="description">
+                100% natural spices for all culinary uses. Make every meal count!!.
+            </p>
+             <a href="cart.html" class="add-to-cart">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+             </a>
+            <a href="#" class="learn-more">Learn More</a>
+        </div>
+  </div>
+
+  <div class="product-container">
+    <div class="product-card">
+        <div class="badge">Best Seller</div>
+        <img src="images/WhatsApp Image 2025-06-02 at 07.57.26_b57ca5bd.jpg" alt="herbal tea" class="product-image">
+
+        <div class="product-info">
+            <h3>Anti Aging Tea</h3>
+            <p class="price">₦4500</p>
+            <p class="description">
+                herbal blend to rejuvenate, shrink wrinkles, close pores, help you glow.
+            </p>
+              <a href="cart.html" class="add-to-cart">
+    <i class="fas fa-shopping-cart"></i> Add to Cart
+        </a>
+            <a href="#" class="learn-more">Learn More</a>
+        </div>
+
+  </div>
+    <div class="product-container">
+        <div class="product-card">
+            <div class="badge">Best Seller</div>
+            <img src="images/image/herbal tea.jpeg" alt="herbal tea" class="product-image">
+    
+            <div class="product-info">
+                <h3>Herbal Tea</h3>
+                <p class="price">₦3500</p>
+                <p class="description">
+                    Herbal tea for relaxation and wellness. Enjoy the soothing benefits of nature.
+                </p>
+                <a href="cart.html" class="add-to-cart">
+        <i class="fas fa-shopping-cart"></i> Add to Cart
+            </a>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+
+<div class="product-container">
+  <!-- Herb Grinder -->
+  <div class="product-card">
+    <div class="badge">Best Seller</div>
+    <img src="images/image/herb grinder.jpeg" alt="Herb Grinder" class="product-image">
+
+    <div class="product-info">
+      <h3>Herb Grinder</h3>
+      <p class="price">₦9,000</p>
+      <p class="description">
+        Durable aluminum grinder for perfect texture and easy use.
+      </p>
+      <a href="cart.html" class="add-to-cart">
+    <i class="fas fa-shopping-cart"></i> Add to Cart
+      </a>
+      <a href="#" class="learn-more">Learn More</a>
+    </div>
+  </div>
+  </section>
+<style>
+            .testimonials-section {
+                background: url('images/image/backround.png') rgba(124, 115, 98, 0.93);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                opacity: 0.95;
+                padding: 56px 0 56px 0;
+                border-radius: 16px;
+                margin: 40px auto 0 auto;
+                max-width: 1100px;
+                box-shadow: 0 2px 16px rgba(44,77,44,0.08);
+                position: relative;
+            }
+            .testimonials-title {
+                font-size: 2rem;
+                color: #2d7a2d;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+            }
+            .testimonials-desc {
+                text-align: center;
+                color: #6b5c2c;
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+            .testimonials-row {
+                display: flex;
+                gap: 32px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .testimonial-card {
+                background: rgba(255,255,255,0.95);
+                border: 1.5px solid #d8caaa;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(44,77,44,0.06);
+                width: 320px;
+                padding: 28px 22px 22px 22px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+                position: relative;
+            }
+            .testimonial-card:hover {
+                box-shadow: 0 6px 24px rgba(182,148,38,0.13);
+                border-color: #b69426;
+                transform: translateY(-6px) scale(1.03);
+            }
+            .testimonial-avatar {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 14px;
+                border: 2px solid #b69426;
+                background: #fff;
+            }
+            .testimonial-name {
+                font-weight: bold;
+                color: #2d7a2d;
+                font-size: 1.08rem;
+                margin-bottom: 2px;
+            }
+            .testimonial-rating {
+                color: #f5b942;
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+            .testimonial-text {
+                color: #5a4a1a;
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 0;
+            }
+            @media (max-width: 900px) {
+                .testimonials-row {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 24px;
+                }
+            }
+        </style>
+        <section class="testimonials-section">
+        <div class="testimonials-title">What Our Customers Say</div>
+        <div class="testimonials-desc" style="color: #fff;">
+            Real stories from real people. See how AKUNAFARMS products are making a difference!
+        </div>
+        <div class="testimonials-row">
+            <div class="testimonial-card">
+                <img src="images/black wo.jpeg" alt="Customer 1" class="testimonial-avatar">
+                <div class="testimonial-name">Sarah K.</div>
+                <div class="testimonial-rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </div>
+                <div class="testimonial-text">
+                    “The All Purpose Spice Mix is a game changer! My family loves the new flavors, and I feel good knowing it’s all natural. Highly recommend AKUNAFARMS!”
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/whitem.jpeg" alt="Customer 2" class="testimonial-avatar">
+                <div class="testimonial-name">James O.</div>
+                <div class="testimonial-rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="testimonial-text">
+                    “I started drinking the herbal teas every morning and feel more energized throughout the day. The quality is unmatched. Thank you, AKUNAFARMS!”
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <img src="images/whitefe.jpeg" alt="Customer 3" class="testimonial-avatar">
+                <div class="testimonial-name">Linda M.</div>
+                <div class="testimonial-rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <div class="testimonial-text">
+                    “The ebooks are so informative! I’ve learned to make my own spice blends and natural remedies. AKUNAFARMS has truly impacted my wellness journey.”
+                </div>
+        </div>
+        <div class="testimonial-card">
+            <img src="images/white.jpg" alt="Customer 4" class="testimonial-avatar">
+            <div class="testimonial-name">Michael T.</div>
+            <div class="testimonial-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="testimonial-text">
+                “The herbal teas have transformed my mornings! I feel more focused and energized throughout the day. Thank you, AKUNAFARMS!”
+            </div>
+    </div>
+        <div class="testimonial-card">
+            <img src="images/black.jpeg" alt="Customer 5" class="testimonial-avatar">
+            <div class="testimonial-name">lindsy R.</div>
+            <div class="testimonial-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+            </div>
+            <div class="testimonial-text">
+                “I love the quality of the herbs! They add so much flavor to my dishes, and I feel great knowing they’re all natural. Highly recommend AKUNAFARMS!”
+            </div>
+        </div>
+    </div>
+    </section>
+</style>
+    <section class="newsletter-section">
+        <style>
+            .newsletter-section {
+                max-width: 500px;
+                margin: 48px auto 60px auto;
+                background: #f9f6ef;
+                border: 2px solid #b69426;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(44,77,44,0.07);
+                padding: 36px 28px 28px 28px;
+                text-align: center;
+            }
+            .newsletter-title {
+                font-size: 1.5rem;
+                color: #2d7a2d;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .newsletter-desc {
+                color: #6b5c2c;
+                font-size: 1.05rem;
+                margin-bottom: 22px;
+            }
+            .newsletter-form {
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                align-items: center;
+            }
+            .newsletter-form input[type="email"] {
+                width: 90%;
+                max-width: 320px;
+                padding: 10px 14px;
+                border: 2px solid #b69426;
+                border-radius: 22px;
+                outline: 2px solid #e6e2d3;
+                font-size: 1rem;
+                color: #2d7a2d;
+                background: #fff;
+                transition: border 0.2s, outline 0.2s;
+            }
+            .newsletter-form input[type="email"]:focus {
+                border-color: #2d7a2d;
+                outline: 2px solid #b69426;
+            }
+            .newsletter-form button {
+                padding: 10px 28px;
+                border: none;
+                border-radius: 22px;
+                background: #b69426;
+                color: #fff;
+                font-size: 1.08rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.2s;
+                box-shadow: 0 1px 4px rgba(44,77,44,0.06);
+            }
+            .newsletter-form button:hover {
+                background: #2d7a2d;
+            }
+            @media (max-width: 600px) {
+                .newsletter-section {
+                    padding: 24px 8px 18px 8px;
+                }
+                .newsletter-form input[type="email"] {
+                    width: 100%;
+                }
+            }
+        </style>
+        <div class="newsletter-title">Subscribe to Our Newsletter</div>
+        <div class="newsletter-desc">
+            Get the latest updates, exclusive offers, and wellness tips delivered straight to your inbox!
+        </div>
+        <form class="newsletter-form" action="#" method="post" autocomplete="off">
+            <input type="email" name="email" placeholder="Enter your email address" required aria-label="Email address">
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+    <footer>
+        <style>
+          .site-footer {
+  background-color: rgba(182, 148, 38, 0.938);
+  color: #f1f1f1 ;
+  padding: 40px 20px 20px;
+  font-family: sans-serif;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a,
+.footer-contact p,
+.footer-socials a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover,
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials .social-icons a {
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+</style>
+        <footer class="site-footer">
+  <div class="footer-content">
+    <!-- Logo & Name -->
+    <div class="footer-brand">
+      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+      <h2>AkunaFarms</h2>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="About Us.html">About Us</a></li>
+        <li><a href="Contact Us.html">Contact</a></li>
+        <li><a href="Recipes.html">Recipes</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@akunafarms.com</p>
+      <p>Phone: +234 801 234 5678</p>
+      <p>Location: Lagos, Nigeria</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="footer-socials">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+  </div>
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+    </html>
