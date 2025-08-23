@@ -102,20 +102,39 @@
     </div>
   </nav>
 
-  <!-- Category Filter -->
-  <div class="container my-5 text-center">
-    <label for="category" class="me-2 fw-bold text-success">Filter by Category:</label>
-    <select id="category" onchange="filterProducts()">
-      <option value="all">Products</option>
-      <option value="spices">Spices</option>
-      <option value="herbs">Herbs</option>
-      <option value="teas">Teas</option>
-      <option value="seedlings">Seedlings</option>
-      <option value="accessories">Accessories</option>
-      <option value="ebook">Ebook</option>
-      <option value="oil">Oil & Moisturizer</option>
-    </select>
+<!-- Category Filter + Search -->
+<div class="container my-5">
+  <div class="row justify-content-center align-items-center g-3">
+    
+    <!-- Category Filter -->
+    <div class="col-md-4 d-flex align-items-center">
+      <label for="category" class="me-2 fw-bold text-success">Filter by Category:</label>
+      <select id="category" class="form-select" onchange="filterProducts()">
+        <option value="all">Products</option>
+        <option value="spices">Spices</option>
+        <option value="herbs">Herbs</option>
+        <option value="teas">Teas</option>
+        <option value="seedlings">Seedlings</option>
+        <option value="accessories">Accessories</option>
+        <option value="ebook">Ebook</option>
+        <option value="oil">Oil & Moisturizer</option>
+      </select>
+    </div>
+
+    <!-- Search Bar with Icon -->
+    <div class="col-md-4">
+      <div class="input-group">
+        <span class="input-group-text bg-white text-muted">
+          <i class="fa fa-search text-success"></i>
+        </span>
+        <input type="text" id="searchBar" class="form-control" placeholder="Search products..." onkeyup="searchProducts()">
+      </div>
+    </div>
+
   </div>
+</div>
+
+
 
        
       <!-- 🌟 Discount Banner -->
