@@ -2,134 +2,208 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us - Akunafarm</title>
+    <title>Contact Us - AkunaFarms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
+        /* --- Reset & Body --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: #a1866f url('logo.png') no-repeat center center fixed;
-            background-size: 300px 300px;
-            background-blend-mode: lighten;
+            background: #f5f0e6;
             min-height: 100vh;
         }
+
+        /* --- Header --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 40px;
-            background:  rgba(182, 148, 38, 0.938); /* Semi-transparent background */
+            padding: 20px 40px;
+            background-color: #2c662d;
             color: #fff;
         }
+
         .header-left {
             display: flex;
             align-items: center;
         }
+
         .header-logo {
             width: 60px;
             height: 60px;
-            margin-right: 18px;
+            margin-right: 15px;
         }
+
         .company-name {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            letter-spacing: 1px;
         }
-        .header-right {
-            text-align: right;
-            font-size: 1rem;
-        }
+
         nav a {
             color: #fff;
             text-decoration: none;
             margin-left: 20px;
             font-weight: bold;
-            transition: color 0.2s;
-            position: sticky;
+            transition: color 0.3s;
         }
+
         nav a:hover {
-            color: #f5e6d3;
+            color: #ff914d;
         }
+
+        /* --- Main Content --- */
         main {
             max-width: 500px;
             margin: 60px auto;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 32px 28px 24px 28px;
+            background: #fff;
+            padding: 32px 28px;
             border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+
         h2 {
             text-align: center;
-            color: #5c4327;
+            color: #2c662d;
             margin-bottom: 24px;
         }
+
         form label {
             display: block;
             margin-bottom: 6px;
-            color: #5c4327;
+            color: #2c662d;
             font-weight: 600;
         }
+
         form input, form textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 18px;
             border: 1px solid #bfa98a;
             border-radius: 5px;
-            background: #f5e6d3;
+            background: #f5f0e6;
             font-size: 1rem;
             resize: vertical;
         }
+
         form button {
-            background: #fffbe7;
-            color: #5c4327;
+            width: 100%;
+            background: #2c662d;
+            color: #fff;
             border: none;
-            padding: 12px 28px;
+            padding: 12px;
             border-radius: 5px;
             font-size: 1rem;
-            cursor: pointer;
             font-weight: bold;
-            transition: background 0.2s;
+            cursor: pointer;
+            transition: background 0.3s;
         }
+
         form button:hover {
-            background: #a1866f;
+            background: #ff914d;
         }
+
+        /* --- Footer --- */
+        .site-footer {
+            background-color: #2c662d;
+            color: #fff;
+            padding: 40px 20px 20px;
+            font-family: sans-serif;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-brand .logo {
+            width: 60px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links a,
+        .footer-contact p,
+        .footer-socials a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover,
+        .footer-socials a:hover {
+            color: #ff914d;
+        }
+
+        .footer-socials .social-icons a {
+            font-size: 18px;
+            margin-right: 15px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 15px;
+            font-size: 13px;
+        }
+
+        /* --- Responsive --- */
         @media (max-width: 700px) {
             header {
                 flex-direction: column;
                 align-items: flex-start;
-                padding: 18px 10px;
             }
-            .header-right {
-                text-align: left;
+
+            nav {
                 margin-top: 10px;
             }
+
             main {
-                margin: 30px 8px;
-                padding: 18px 8px 14px 8px;
+                margin: 30px 15px;
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <div class="header-left">
-            <img src="images/image/favicon.png" alt="Company Logo" class="header-logo">
-            <span class="company-name">AKUNAFARM</span>
+            <img src="images/favicon.png" alt="Logo" class="header-logo">
+            <span class="company-name">AKUNAFARMS</span>
         </div>
         <nav>
-
-            <a href="index.html"><i class="fa fa-home"></i>Home</a>
-            <a href="about.html"><i class="fa fa-info-circle"></i>About Us</a>
-            <a href="services.html"><i class="fa fa-briefcase"></i>Services</a>
-            <a href="blog.html"><i class="fa fa-pencil-alt"></i>Blog</a>
-            <a href="contact.html"><i class="fa fa-envelope"></i>Contact Us</a>
-            <a href="recipes.html"><i class="fa fa-utensils"></i>Recipes</a>
-            <a href="Book Now.html"><i class="fas fa-calendar"></i>Book Now</a>
+            <a href="index.html"><i class="fa fa-home"></i> Home</a>
+            <a href="about.html"><i class="fa fa-info-circle"></i> About Us</a>
+            <a href="services.html"><i class="fa fa-briefcase"></i> Services</a>
+            <a href="blog.html"><i class="fa fa-pencil-alt"></i> Blog</a>
+            <a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a>
+            <a href="recipes.html"><i class="fa fa-utensils"></i> Recipes</a>
+            <a href="Book Now.html"><i class="fas fa-calendar"></i> Book Now</a>
             <a href="user-profile.html"><i class="fa fa-user"></i></a>
             <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
-            
-
         </nav>
     </header>
+
+    <!-- Main Section -->
     <main>
         <h2>Contact Us</h2>
         <form>
@@ -145,109 +219,47 @@
             <button type="submit">Send Message</button>
         </form>
     </main>
-    <footer>
-        <style>
-          .site-footer {
-  background-color: rgba(182, 148, 38, 0.938);
-  color: #f1f1f1 ;
-  padding: 40px 20px 20px;
-  font-family: sans-serif;
-}
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+                <h2>AkunaFarms</h2>
+            </div>
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Shop.html">Shop</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="Contact Us.html">Contact</a></li>
+                    <li><a href="Recipes.html">Recipes</a></li>
+                </ul>
+            </div>
 
-.footer-brand .logo {
-  width: 60px;
-  margin-bottom: 10px;
-}
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: info@akunafarms.com</p>
+                <p>Phone: +234 801 234 5678</p>
+                <p>Location: Lagos, Nigeria</p>
+            </div>
 
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
+            <div class="footer-socials">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
 
-.footer-links a,
-.footer-contact p,
-.footer-socials a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.footer-links a:hover,
-.footer-socials a:hover {
-  text-decoration: underline;
-}
-
-.footer-socials .social-icons a {
-  font-size: 18px;
-  margin-right: 15px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #444;
-  padding-top: 15px;
-  font-size: 13px;
-}
-</style>
-        <footer class="site-footer">
-  <div class="footer-content">
-    <!-- Logo & Name -->
-    <div class="footer-brand">
-      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
-      <h2>AkunaFarms</h2>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="About Us.html">About Us</a></li>
-        <li><a href="Contact Us.html">Contact</a></li>
-        <li><a href="Recipes.html">Recipes</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>Email: info@akunafarms.com</p>
-      <p>Phone: +234 801 234 5678</p>
-      <p>Location: Lagos, Nigeria</p>
-    </div>
-
-    <!-- Socials -->
-    <div class="footer-socials">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Copyright -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
-  </div>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <div class="footer-bottom">
+            <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+        </div>
     </footer>
+
 </body>
 </html>
