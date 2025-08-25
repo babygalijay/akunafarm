@@ -1,445 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Herbal Recipes & Spices Education</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f8fff8;
-        }
-        header {
-            background: rgba(182, 148, 38, 0.938);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 30px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        .logo i {
-            font-size: 2rem;
-            color: #388e3c;
-            margin-right: 10px;
-        }
-        .logo span {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #388e3c;
-        }
-        nav a {
-            margin: 0 12px;
-            text-decoration: none;
-            color: #388e3c;
-            font-weight: 500;
-            transition: color 0.2s;
-            position: sticky;
-        }
-        nav a:hover {
-            color: #155724;
-        }
-        .main-content {
-            max-width: 900px;
-            margin: 30px auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px #d0f5d8;
-            padding: 30px;
-        }
-        .section {
-            margin-bottom: 35px;
-        }
-        .section img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 8px;
-            margin: 15px 0;
-            display: block;
-            align-self: left;
+  <meta charset="UTF-8">
+  <title>Recipes & Education | AkunaFarms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover herbal recipes, spice education, and natural remedies with AkunaFarms. Learn about health tips, organic farming, and eBooks.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        }
-        .ebooks {
-            background: #e6ffe6;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        .ebooks a {
-            color: #2e7d32;
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 700px) {
-            header, footer {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 15px;
-            }
-            nav {
-                margin-top: 10px;
-            }
-            .main-content {
-                padding: 15px;
-            }
-        }
-    </style>
+  <style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f0e6;
+      min-height: 100vh;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2e7d32;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .hero video {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background: #2e7d32;
+      color: #fff;
+    }
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .site-footer a {
+      color: #fff;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="images/image/favicon.png" alt="AkunaFarms Logo" style="height:40px; margin-right:10px; border-radius:6px;">
-            <span>AkunaFarms</span>
-        </div>
-        <nav>
-            <a href="index.html"><i class="fas fa-home"></i> Home</a>
-            <a href="Shop.html"><i class="fas fa-shopping-cart"></i> Shop</a>
-             <a href="Blog.html" class="nav-item"> <i class="fas fa-pencil-alt"></i>Blog</a>
-            <a href="register.html"><i class="fas fa-user-user"></i>Register/Login</a>
-            <a href="Contact Us.html"><i class="fas fa-envelope"></i> Contact Us</a>
-            <a href="Book Now.html"><i class="fas fa-calendar"></i> Book Now</a>
-        </nav>
-    </header>
-    <video autoplay muted loop style="width:100%; height: 500px; object-fit: cover; position: relative;">
-        <source src="images/ad vide.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">🌿 AkunaFarms</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="contact.html">Contact</a>
+      <a href="register.html"><i class="fas fa-user"></i> Register/Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://res.cloudinary.com/dkoeutxie/video/upload/v1755869759/ad_vide_gvp80f.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
-
-    <div class="main-content">
-        <h1>Welcome to Herbal Recipes & Spices Education</h1>
-        <p>
-            Discover natural remedies, spice blends, and herbal teas for various ailments and culinary delights. Learn, prepare, and enjoy the benefits of nature!
-        </p>
-        <ul>
-            <li>Explore step-by-step guides for making herbal remedies at home.</li>
-            <li>Understand the health benefits and uses of common kitchen spices.</li>
-            <li>Find tips on sourcing, storing, and preserving fresh herbs and spices.</li>
-            <li>Access expert advice on safe herbal practices and dosages.</li>
-            <li>Join our community to share recipes, ask questions, and connect with herbal enthusiasts.</li>
-        </ul>
-        <div class="section">
-            <h2>Herbs & Spices for Health</h2>
-            <img src="images/image/backround.png" alt="Herbs and Spices">
-            <p>
-                Herbs and spices are not only essential for flavoring food but also offer numerous health benefits. Here are some common herbs and spices along with their uses:
-            </p>
-            <ul>
-                <li><strong>Ginger:</strong> Anti-inflammatory, aids digestion, and relieves nausea.</li>
-                <li><strong>Peppermint:</strong> Soothes digestive issues, relieves headaches, and freshens breath.</li>
-                <li><strong>Turmeric:</strong> Powerful anti-inflammatory and antioxidant properties.</li>
-                <li><strong>Cardamom:</strong> Aids digestion, freshens breath, and has antioxidant properties.</li>
-                <li><strong>Cloves:</strong> Antimicrobial properties, helps with toothache relief.</li>
-                <li><strong>Star Anise:</strong> Antiviral properties, used in cough syrups.</li>
-                <li><strong>Chili Pepper:</strong> Boosts metabolism and adds heat to dishes.</li>
-                <li><strong>Ashwagandha:</strong> Adaptogen that helps manage stress and anxiety.</li>
-                <li><strong>Maca Root:</strong> Enhances energy levels and supports hormonal balance.</li>
-                <li><strong>Mullein:</strong> Supports respiratory health and soothes the throat.</li>
-                <li><strong>Goat Weed (Epimedium):</strong> Traditionally used to boost energy and libido.</li>
-                <li><strong>Mugwort:</strong> Aids digestion and promotes relaxation.</li>
-                <li><strong>Black Pepper:</strong> Enhances nutrient absorption from other herbs and foods.</li>
-            </ul>
-
-        <div class="section" style="background: url('images/herbs-bg.jpg') center/cover no-repeat; padding: 25px; border-radius: 8px;"></div>
-            <h2>Herbal Recipes for Common Ailments</h2>
-            <img src="images/image/ebook learn herb.jpg" alt="Herbal Remedy">
-            <ul>
-            <li><strong>Ginger Tea for Cold:</strong> Boil sliced ginger in water, add honey and lemon. Drink warm.</li>
-            <li><strong>Peppermint for Indigestion:</strong> Steep peppermint leaves in hot water for 5 minutes. Sip slowly.</li>
-            <li><strong>Turmeric Milk for Inflammation:</strong> Mix turmeric powder in warm milk, add a pinch of black pepper.</li>
-            <li><strong>Cardamom for Fresh Breath:</strong> Chew cardamom pods or add to tea for a refreshing flavor and digestive support.</li>
-            <li><strong>Cloves for Toothache:</strong> Place a whole clove on the affected tooth or use clove oil for temporary relief.</li>
-            <li><strong>Star Anise for Cough:</strong> Simmer star anise in hot water and sip as a soothing herbal tea.</li>
-            <li><strong>Chili Pepper for Metabolism:</strong> Add fresh or dried chili pepper to dishes to boost metabolism and circulation.</li>
-            <li><strong>Ashwagandha for Stress:</strong> Mix ashwagandha powder into warm milk or smoothies to help manage stress and support energy.</li>
-            <li><strong>Maca Root for Vitality:</strong> Blend maca root powder into smoothies or oatmeal for increased stamina and hormonal balance.</li>
-            <li><strong>Mullein for Respiratory Health:</strong> Steep mullein leaves in hot water to make a tea that soothes the throat and supports lung function.</li>
-            <li><strong>Goat Weed (Epimedium) for Energy:</strong> Use goat weed supplements or teas to support energy and vitality (consult a healthcare provider first).</li>
-            <li><strong>Mugwort for Digestion:</strong> Brew mugwort leaves as a tea to aid digestion and promote relaxation.</li>
-            <li><strong>Black Pepper for Absorption:</strong> Add freshly ground black pepper to meals to enhance the absorption of nutrients and other herbs.</li>
-            </ul>
-            <p>
-            These herbs and spices not only add flavor to your meals but also offer a range of health benefits. Always use them in moderation and consult a healthcare professional if you have underlying health conditions or are pregnant.
-            </p>
-        </div>
-        <div class="section ebooks">
-            <h2>Download Our eBook</h2>
-            <p>
-                Get our comprehensive eBook on herbal remedies and spice education. It includes detailed recipes, health benefits, and tips for using herbs and spices effectively.
-            </p>
-            <a href="herbal remedies.pdf" target="_blank">Download eBook</a>
-        </div>
-
-
-        <div class="section">
-            <h2>Powerful Herbal Recipes for Various Ailments</h2>
-            <img src="images/spice.bg.jpg" alt="Strong Herbal Recipes">
-            <table style="width:100%; border-collapse:collapse; margin-top:15px;">
-                <thead>
-                    <tr style="background:#e6ffe6;">
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Ailment</th>
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Recipe</th>
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Preparation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Cold & Flu</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Ginger-Garlic Honey Tea</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Boil sliced ginger and crushed garlic in water, strain, add honey and lemon. Drink warm twice daily.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Indigestion</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Peppermint-Fennel Infusion</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Steep peppermint leaves and fennel seeds in hot water for 7 minutes. Drink after meals.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Inflammation</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Turmeric-Golden Milk</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Mix turmeric, black pepper, and a dash of cinnamon in warm milk. Sweeten with honey if desired.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Stress & Anxiety</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Ashwagandha-Lemon Balm Tea</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Steep ashwagandha root and lemon balm leaves in hot water for 10 minutes. Drink before bed.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Cough</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Thyme-Honey Syrup</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Simmer thyme in water, strain, mix with honey. Take 1 spoonful as needed.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Low Immunity</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Elderberry-Echinacea Elixir</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Simmer elderberries and echinacea root in water, strain, add honey. Take daily during cold season.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Headache</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Willow Bark-Peppermint Tea</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Steep willow bark and peppermint leaves in hot water for 10 minutes. Drink as needed.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="margin-top:15px;">
-                Always consult a healthcare professional before starting any herbal remedy, especially if you have underlying health conditions or are pregnant.
-            </p>
-        </div>
-        <div class="section">
-            <h2>Strong Spice Mixes for Different Dishes</h2>
-            <img src="images/spice.pg 2.jpg" alt="Spice Mixes">
-            <table style="width:100%; border-collapse:collapse; margin-top:15px;">
-                <thead>
-                    <tr style="background:#e6ffe6;">
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Dish Type</th>
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Spice Mix</th>
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Ingredients</th>
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Usage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Grilled Chicken</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Smoky BBQ Rub</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Paprika, garlic powder, onion powder, black pepper, cayenne, brown sugar, salt</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Rub generously on chicken before grilling or roasting.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Vegetable Curry</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Classic Curry Blend</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Coriander, cumin, turmeric, fenugreek, mustard seeds, chili powder, cinnamon</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Add 2-3 tsp to sautéed onions and tomatoes as curry base.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Beef Stew</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Hearty Stew Mix</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Bay leaf, thyme, rosemary, black pepper, smoked paprika, allspice</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Stir into broth or sprinkle over meat before browning.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Fish & Seafood</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Zesty Citrus Mix</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Lemon zest, dill, parsley, garlic powder, black pepper, sea salt</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Sprinkle on fish before baking or grilling.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Rice & Grains</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Aromatic Pilaf Blend</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Cumin, cardamom, cinnamon, cloves, bay leaf, saffron</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Add to rice or grain cooking water for fragrance and flavor.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Roasted Vegetables</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Herb & Spice Medley</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Oregano, thyme, smoked paprika, garlic powder, black pepper, sea salt</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Toss with olive oil and vegetables before roasting.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="margin-top:15px;">
-                Mix spices in advance and store in airtight containers for convenience. Adjust quantities to taste and dietary needs.
-            </p>
-        </div>
-        <div class="section">
-            <h2>Strong Herbal & Spice Mix for Health Teas</h2>
-            <img src="images/herbal tea.bg.jpg" alt="Health Tea Mix">
-            <table style="width:100%; border-collapse:collapse; margin-top:15px;">
-                <thead>
-                    <tr style="background:#e6ffe6;">
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Tea Blend</th>
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Ingredients</th>
-                        <th style="padding:10px; border:1px solid #b2f2bb;">Preparation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;"><strong>Immunity Boosting Tea Mix</strong></td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Dried ginger, turmeric, cinnamon stick, black pepper, lemongrass, cloves, star anise</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Simmer equal parts of all ingredients in water for 10 minutes, strain, and sweeten with honey if desired.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;"><strong>Detox & Digestion Tea Blend</strong></td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Dried dandelion root, fennel seeds, peppermint leaves, lemon slice</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Steep all ingredients in hot water for 7 minutes. Drink after meals for digestive support.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;"><strong>Anti-Inflammatory Power Tea</strong></td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Turmeric, ginger, cardamom, cayenne pepper, lemon</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Blend all ingredients, steep in hot water, add a squeeze of lemon, and enjoy warm.</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px; border:1px solid #b2f2bb;"><strong>Relaxation & Sleep Tea</strong></td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Chamomile, lavender, lemon balm, valerian root</td>
-                        <td style="padding:10px; border:1px solid #b2f2bb;">Combine all herbs, steep for 5–7 minutes before bedtime.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>
-            Mix these herbs and spices in advance and store in airtight containers. Use 1–2 teaspoons per cup of hot water. Always consult a healthcare professional before starting new herbal blends, especially if you have health conditions or take medications.
-            </p>
-        </div>
-
-        <div class="ebooks">
-            <h3>Recommended eBooks for Further Learning</h3>
-            <ul>
-                <li><a href="ebooks/herbal-remedies.pdf" target="_blank"><i class="fas fa-book"></i> Herbal Remedies Guide</a></li>
-                <li><a href="ebooks/spice-blends.pdf" target="_blank"><i class="fas fa-book"></i> Spice Blends for Every Dish</a></li>
-                <li><a href="ebooks/herbal-teas.pdf" target="_blank"><i class="fas fa-book"></i> Herbal Teas & Their Benefits</a></li>
-                <li><a href="ebooks/herbal-oils.pdf" target="_blank"><i class="fas fa-book"></i> Herbal Oils: Extraction & Uses</a></li>
-                <li><a href="ebooks/herbal-tinctures.pdf" target="_blank"><i class="fas fa-book"></i> Herbal Tinctures: Preparation & Application</a></li>
-                <li><a href="ebooks/advanced-herbalism.pdf" target="_blank"><i class="fas fa-book"></i> Advanced Herbalism Techniques</a></li>
-            </ul>
-            <p>Explore our collection of eBooks to deepen your understanding of herbalism and spice preparation. Each eBook is designed to provide you with practical knowledge and skills.</p>
-            <p>Whether you're a beginner or an experienced herbalist, our eBooks cover a wide range of topics, from basic herbal remedies to advanced techniques in herbalism.</p>
-            <p>Expand your knowledge with our expertly curated eBooks. <a href="cart.html">Add to Cart</a></p>
-        </div>
+    <div class="hero-text">
+      <h1>Natural Recipes & Education</h1>
+      <p>Discover the healing power of herbs and spices.</p>
     </div>
-    <footer>
-        <style>
-          .site-footer {
-  background-color: rgba(182, 148, 38, 0.938);
-  color: #f1f1f1 ;
-  padding: 40px 20px 20px;
-  font-family: sans-serif;
-}
+  </section>
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
+  <!-- Recipes Section -->
+  <section class="section">
+    <h2>Herbal Recipes for Common Ailments</h2>
+    <table>
+      <caption>Simple Natural Remedies</caption>
+      <tr>
+        <th>Ailment</th>
+        <th>Herbal Recipe</th>
+        <th>Instructions</th>
+      </tr>
+      <tr>
+        <td>Cold & Flu</td>
+        <td>Ginger + Honey + Lemon Tea</td>
+        <td>Boil ginger, add lemon and honey, sip warm.</td>
+      </tr>
+      <tr>
+        <td>Indigestion</td>
+        <td>Peppermint Tea</td>
+        <td>Steep peppermint leaves in hot water for 10 mins.</td>
+      </tr>
+      <tr>
+        <td>Stress</td>
+        <td>Chamomile Infusion</td>
+        <td>Steep chamomile flowers, drink before bed.</td>
+      </tr>
+    </table>
+  </section>
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+  <!-- Spice Education -->
+  <section class="section" style="background:#fafafa;">
+    <h2>Spice Education</h2>
+    <table>
+      <caption>Benefits of Common Spices</caption>
+      <tr>
+        <th>Spice</th>
+        <th>Health Benefits</th>
+      </tr>
+      <tr>
+        <td>Turmeric</td>
+        <td>Anti-inflammatory, boosts immunity.</td>
+      </tr>
+      <tr>
+        <td>Cinnamon</td>
+        <td>Controls blood sugar, antioxidant.</td>
+      </tr>
+      <tr>
+        <td>Garlic</td>
+        <td>Heart health, reduces cholesterol.</td>
+      </tr>
+    </table>
+  </section>
 
-.footer-brand .logo {
-  width: 60px;
-  margin-bottom: 10px;
-}
+  <!-- eBooks Section -->
+  <section class="section">
+    <h2>Download Free eBooks</h2>
+    <p style="text-align:center;">
+      📘 <a href="ebooks/herbal-guide.pdf" download>Complete Herbal Remedy Guide</a>
+    </p>
+  </section>
 
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links a,
-.footer-contact p,
-.footer-socials a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.footer-links a:hover,
-.footer-socials a:hover {
-  text-decoration: underline;
-}
-
-.footer-socials .social-icons a {
-  font-size: 18px;
-  margin-right: 15px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #444;
-  padding-top: 15px;
-  font-size: 13px;
-}
-</style>
-        <footer class="site-footer">
-  <div class="footer-content">
-    <!-- Logo & Name -->
-    <div class="footer-brand">
-      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
-      <h2>AkunaFarms</h2>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="About Us.html">About Us</a></li>
-        <li><a href="Contact Us.html">Contact</a></li>
-        <li><a href="Recipes.html">Recipes</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>Email: info@akunafarms.com</p>
-      <p>Phone: +234 801 234 5678</p>
-      <p>Location: Lagos, Nigeria</p>
-    </div>
-
-    <!-- Socials -->
-    <div class="footer-socials">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Copyright -->
-  <div class="footer-bottom">
+  <!-- Footer -->
+  <footer class="site-footer">
     <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
-  </div>
-</footer>
+    <p>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a>
+    </p>
+    <p>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </p>
+  </footer>
+
 </body>
 </html>

@@ -13,48 +13,198 @@
       color: #333;
     }
 
+    /* HEADER & NAV */
     header {
-      background-color: rgba(182, 148, 38, 0.938);
+      background-color: #144d2f;/* dark green */
       color: white;
-      padding: 20px 40px;
-      text-align: center;
     }
 
-    header h1 {
+    .header-top {
+      text-align: center;
+      padding: 20px 40px;
+    }
+
+    .header-top h1 {
       margin: 0;
       font-size: 2.5em;
     }
 
-    header p {
+    .header-top p {
       margin: 5px 0 0;
       font-style: italic;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
+    nav {
+      background: #144d2f; /* slightly darker green */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      flex-wrap: wrap;
     }
 
-    .blog-post {
-      margin-bottom: 60px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .blog-post img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 20px 0;
+    .logo img {
+      width: 40px;
     }
 
-    .blog-post h2 {
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      top: 30px;
+      border-radius: 6px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
       color: #2e8b57;
-      margin-bottom: 10px;
+      text-decoration: none;
     }
 
-    .blog-post p {
-      line-height: 1.7;
+    .dropdown-content a:hover {
+      background-color: #f3f3f3;
     }
 
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .icons {
+      display: flex;
+      gap: 15px;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .icons a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .book-now {
+      background-color: gold;
+      color: black;
+      padding: 8px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+
+    /* BLOG POSTS */
+    .blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #2e7d32; /* dark green */
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #2e7d32;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #256327; /* darker green */
+}
+
+    /* CTA BUTTONS */
+    .cta-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #2e8b57;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #226943;
+    }
+
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -78,336 +228,199 @@
     .service-card p {
       font-size: 0.95rem;
     }
+
+    /* FOOTER */
+    .site-footer {
+      background-color: #144d2f;
+      color: #f1f1f1;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-brand .logo {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links a,
+    .footer-contact p,
+    .footer-socials a {
+      color: #f1f1f1;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover,
+    .footer-socials a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      font-size: 13px;
+    }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>AkunaFarms </h1>
-    <p>Healing through nature, knowledge, and community</p>
-  </header>
-  <style>
-    nav {
-      background: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      flex-wrap: wrap;
-      position: sticky;
-    }
+    <div class="header-top">
+      <h1>AkunaFarms</h1>
+      <p>Healing through nature, knowledge, and community</p>
+    </div>
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      width: 40px;
-    }
-
-    .logo span {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #2e8b57;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #2e8b57;
-      font-weight: 500;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: #1c5d3a;
-    }
-
-    /* Dropdown */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      top: 30px;
-      z-index: 10;
-      border-radius: 6px;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 10px 15px;
-      color: #2e8b57;
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f3f3f3;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Cart & User */
-    .icons {
-      display: flex;
-      gap: 15px;
-      font-size: 1.2rem;
-      color: #2e8b57;
-    }
-
-    .icons a {
-      color: inherit;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .icons a:hover {
-      color: #1c5d3a;
-    }
-
-    /* Book Now Button */
-    .book-now {
-      background-color: black;
-      color: #fff;
-      padding: 8px 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 20px;
-    }
-
-    .book-now:hover {
-      background-color: #226943;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      .icons {
-        margin-top: 10px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <div class="logo">
-    <img src="images/favicon.png" alt="Logo" />
-    <span>AkunaFarms</span>
-  </div>
-
-  <div class="nav-links">
-    <a href="index.html"><i class="fas fa-home"></i>Home</a>
-    <a href="Shop.html"><i class="fas fa-shopping-basket"></i>Shop</a>
-    <a href="About Us.html"><i class="fas fa-info-circle"></i>About Us</a>
-    
-    <div class="dropdown">
-      <a href="#">Our Services <i class="fas fa-caret-down"></i></a>
-      <div class="dropdown-content">
-        <a href="#">Yoga & Therapy</a>
-        <a href="#">Farming Consult</a>
-        <a href="#">eBooks & Courses</a>
+    <nav>
+      <div class="logo">
+        <img src="images/favicon.png" alt="Logo" />
+        <span>AkunaFarms</span>
       </div>
-    </div>
 
-    <a href="Recipes.html"><i class="fas fa-utensils"></i>Recipes</a>
-    <a href="healthbenefits.html"><i class="fas fa-leaf"></i> Health Benefits</a>
-    <a href="Book Now.html" class="book-now"><i class="fas fa-calendar"></i> Book Now</a>
-  </div>
+      <div class="nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="shop.html"><i class="fas fa-shopping-basket"></i> Shop</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+        
+        <div class="dropdown">
+          <a href="#">Our Services <i class="fas fa-caret-down"></i></a>
+          <div class="dropdown-content">
+            <a href="#">Yoga & Therapy</a>
+            <a href="#">Farming Consult</a>
+            <a href="#">eBooks & Courses</a>
+          </div>
+        </div>
 
-  <div class="icons">
-    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-    <a href="#"><i class="fas fa-user"></i></a>
-  </div>
-</nav>
+        <a href="recipes.html"><i class="fas fa-utensils"></i> Recipes</a>
+        <a href="healthbenefits.html"><i class="fas fa-leaf"></i> Health Benefits</a>
+        <a href="book.html" class="book-now"><i class="fas fa-calendar"></i> Book Now</a>
+      </div>
 
-  <div class="container">
+      <div class="icons">
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="blog-post">
+  <!-- CONTENT -->
+<div class="container blog-container">
+  <div class="blog-card">
+    <img src="https://res.cloudinary.com/dkoeutxie/image/upload/v1756132719/WhatsApp_Image_2025-06-02_at_07.57.28_a5eb9fdc_rfojlq.jpg" alt="Moringa Oil Benefits">
+    <div class="card-content">
       <h2>🌿 The Power of Moringa Oil</h2>
-      <img src="https://www.herbazest.com/imgs/a/a/moringa-oil.jpg" alt="Moringa Oil Benefits">
-      <p>
-        Moringa oil is a true gift from nature. Rich in antioxidants and oleic acid, it works wonders on skin and hair, helping to hydrate, protect, and heal. At AkunaFarms, we cold-press our moringa to retain every drop of nourishment. Whether you’re treating acne or conditioning your scalp, moringa oil is your go-to natural remedy.
-      </p>
+      <p>Moringa oil is a true gift from nature...</p>
+      <a href="Shop.html" class="cta-btn">Buy Now</a>
     </div>
+  </div>
 
-    <div class="blog-post">
+  <div class="blog-card">
+    <img src="https://res.cloudinary.com/dkoeutxie/image/upload/v1756132964/yaga_ou0cuc.jpg" alt="Yoga Meditation">
+    <div class="card-content">
       <h2>🧘‍♀️ Wellness Beyond Herbs: Yoga & Meditation</h2>
-      <img src="https://cdn.pixabay.com/photo/2016/11/22/20/10/yoga-1850955_1280.jpg" alt="Meditation and Yoga">
-      <p>
-        At AkunaFarms, we believe that healing is holistic. Our yoga consultations and guided meditation sessions help you find peace, balance, and clarity. Our trained practitioners help you release stress, strengthen your mind-body connection, and stay rooted in calm — just like the plants we grow.
-      </p>
+      <p>At AkunaFarms, we believe healing is holistic...</p>
+      <a href="book.html" class="cta-btn">Book a Session</a>
     </div>
+  </div>
 
-    <div class="blog-post">
+  <div class="blog-card">
+    <img src="https://res.cloudinary.com/dkoeutxie/image/upload/v1756133493/learn_cwsnjv.webp" alt="AkunaFarms eBooks">
+    <div class="card-content">
       <h2>📚 Learn & Grow: Our eBooks and Courses</h2>
-      <img src="https://cdn.pixabay.com/photo/2014/08/29/14/10/book-432823_1280.jpg" alt="AkunaFarms eBooks">
-      <p>
-        Want to become your own herbalist? Our collection of eBooks and video guides teach you how to identify herbs, prepare natural remedies, and build a sustainable lifestyle. Whether you're a beginner or an enthusiast, AkunaFarms is your learning partner.
-      </p>
+      <p>Want to become your own herbalist?...</p>
+      <a href="ebooks.html" class="cta-btn">Buy eBooks</a>
     </div>
+  </div>
+</div>
+
 
     <h2 style="text-align:center;">🌾 What We Offer</h2>
-
     <div class="services">
       <div class="service-card">
         <h3>Herbal Products</h3>
-        <p>From moringa to spice blends, we offer organic, locally sourced herbal products to nourish your body naturally.</p>
+        <p>Organic, locally sourced herbal products.</p>
+        <a href="shop.html" class="cta-btn">Shop Products</a>
       </div>
       <div class="service-card">
         <h3>Yoga & Meditation Consults</h3>
-        <p>Find inner peace with our one-on-one yoga and breathwork sessions designed for healing and grounding.</p>
+        <p>Find inner peace with one-on-one yoga.</p>
+        <a href="book.html" class="cta-btn">Book Consultation</a>
       </div>
       <div class="service-card">
         <h3>Digital Courses & eBooks</h3>
-        <p>Learn herbal medicine, gardening, and self-care through our educational materials — updated regularly.</p>
+        <p>Learn herbal medicine & self-care.</p>
+        <a href="ebooks.html" class="cta-btn">Buy eBooks</a>
       </div>
       <div class="service-card">
         <h3>Farming Consultations</h3>
-        <p>Need help setting up a sustainable farm? We offer digital and in-person consulting to help you succeed.</p>
+        <p>Sustainable farm setup assistance.</p>
+        <a href="consult.html" class="cta-btn">Talk to an Expert</a>
       </div>
       <div class="service-card">
         <h3>Therapy & Inner Healing</h3>
-        <p>We guide emotional wellness using plant therapy, holistic tools, and mindfulness-based practices.</p>
+        <p>Emotional wellness with plant therapy.</p>
+        <a href="therapy.html" class="cta-btn">Speak to a Therapist</a>
       </div>
       <div class="service-card">
         <h3>Community & Events</h3>
-        <p>Join our online and in-person events — from herb walks to workshops — and be part of the Akuna movement.</p>
+        <p>Join our workshops and events.</p>
+        <a href="community.html" class="cta-btn">View Community</a>
       </div>
     </div>
   </div>
 
- <footer>
-        <style>
-          .site-footer {
-  background-color: rgba(182, 148, 38, 0.938);
-  color: #f1f1f1 ;
-  padding: 40px 20px 20px;
-  font-family: sans-serif;
-}
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
+        <h2>AkunaFarms</h2>
+      </div>
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+        </ul>
+      </div>
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: info@akunafarms.com</p>
+        <p>Phone: +234 801 234 5678</p>
+        <p>Location: Lagos, Nigeria</p>
+      </div>
 
-.footer-brand .logo {
-  width: 60px;
-  margin-bottom: 10px;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links a,
-.footer-contact p,
-.footer-socials a {
-  color: #f1f1f1;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.footer-links a:hover,
-.footer-socials a:hover {
-  text-decoration: underline;
-}
-
-.footer-socials .social-icons a {
-  font-size: 18px;
-  margin-right: 15px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #444;
-  padding-top: 15px;
-  font-size: 13px;
-}
-</style>
-        <footer class="site-footer">
-  <div class="footer-content">
-    <!-- Logo & Name -->
-    <div class="footer-brand">
-      <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
-      <h2>AkunaFarms</h2>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="About Us.html">About Us</a></li>
-        <li><a href="Contact Us.html">Contact</a></li>
-        <li><a href="Recipes.html">Recipes</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>Email: info@akunafarms.com</p>
-      <p>Phone: +234 801 234 5678</p>
-      <p>Location: Lagos, Nigeria</p>
-    </div>
-
-    <!-- Socials -->
-    <div class="footer-socials">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+      <div class="footer-socials">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Copyright -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
-  </div>
-</footer>
+    <div class="footer-bottom">
+      <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

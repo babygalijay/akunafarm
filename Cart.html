@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AkunaFarms Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    /* Header & Navbar */
+    header {
+      background-color: #2e7d32; /* dark green */
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      background-color: #2e7d32;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .logo img { width: 40px; }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+    }
+    .nav-links a:hover { color: #c0f0b3; }
+    /* Dropdown */
+    .dropdown { position: relative; cursor: pointer; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      top: 30px;
+      z-index: 10;
+      border-radius: 6px;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #2e7d32;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover { background-color: #f3f3f3; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .icons a { color: white; margin-left: 15px; font-size: 1.2rem; }
+    /* Cart Table */
+    .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #e0f2e9; }
+    .qty-input { width: 60px; text-align: center; }
+    .total { text-align: right; margin-top: 20px; font-weight: bold; font-size: 1.2rem; }
+    .checkout-btn { display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #2e7d32; color: white; text-decoration: none; border-radius: 6px; }
+    .checkout-btn:hover { background-color: #226633; }
+    /* Footer */
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px){
+      nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { flex-direction: column; gap: 10px; margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AkunaFarms</h1>
+  <nav>
+    <div class="logo">
+      <img src="images/favicon.png" alt="Logo">
+      <span>AkunaFarms</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="shop.html"><i class="fas fa-shopping-basket"></i> Shop</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+      <div class="dropdown">
+        <a href="#">Wellness <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="yoga.html">Yoga & Therapy</a>
+          <a href="consult.html">Farming Consult</a>
+          <a href="ebooks.html">eBooks & Courses</a>
+        </div>
+      </div>
+      <a href="recipes.html"><i class="fas fa-utensils"></i> Recipes</a>
+    </div>
+    <div class="icons">
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#"><i class="fas fa-user"></i></a>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Your Cart</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price ($)</th>
+        <th>Subtotal ($)</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- Items will render here -->
+    </tbody>
+  </table>
+  <div class="total" id="total">Total: $0</div>
+  <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+</div>
+
+<footer>
+  &copy; 2025 AkunaFarms. All Rights Reserved.
+</footer>
+
+<script>
+  const cartTableBody = document.getElementById("cart-items");
+  const totalEl = document.getElementById("total");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  function renderCart(){
+    cartTableBody.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+      const subtotal = item.price * item.quantity;
+      total += subtotal;
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td><input type="number" value="${item.quantity}" min="1" data-id="${item.id}" class="qty-input"></td>
+        <td>${item.price.toFixed(2)}</td>
+        <td>${subtotal.toFixed(2)}</td>
+      `;
+      cartTableBody.appendChild(row);
+    });
+
+    totalEl.textContent = "Total: $" + total.toFixed(2);
+  }
+
+  cartTableBody.addEventListener("change", (e) => {
+    if(e.target.classList.contains("qty-input")){
+      const id = e.target.dataset.id;
+      const qty = parseInt(e.target.value);
+      cart = cart.map(item => item.id === id ? {...item, quantity: qty} : item);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+  });
+
+  renderCart();
+</script>
+
+</body>
+</html>

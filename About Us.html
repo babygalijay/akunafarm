@@ -162,12 +162,18 @@
 
 
     /* ===== ABOUT SECTION ===== */
-    .about-section {
-    background-color: #fdf6f0; /* Soft cream background */
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    margin: 40px auto;
+   .about-section {
+  background-image: url('images/herooo\ banner.png'); /* safer filename */
+  background-color: #fdf6f0; /* Soft cream background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  margin: 40px auto;
+  min-height: 300px; /* ensures image shows */
+  opacity: 50;
 }
 
 .about-section h2 {
@@ -183,6 +189,7 @@
     line-height: 1.7;
     color: #333;
     margin-bottom: 15px;
+    z-index: 100;
 }
 
 /* Team section */
@@ -292,7 +299,7 @@
 
     /* Newsletter */
     .newsletter {
-      background: #2c662d;
+      background: grey;
       color: #fff;
       text-align: center;
       padding: 40px 20px;
@@ -369,9 +376,9 @@
     <div class="nav-left">
       <a href="index.html" class="logo">AkunaFarm</a>
       <div class="nav-links">
-        <a href="index.html text-white">Home</a>
+        <a href="index.html">Home</a>
         <a href="Shop.html">Shop</a>
-        <a href="About Us.html" class="active">About Us</a>
+        <a href="About Us.html">About Us</a>
         <a href="Contact Us.html">Contact</a>
       </div>
     </div>
