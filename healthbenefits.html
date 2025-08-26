@@ -1,283 +1,237 @@
-<!--header-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Health Benefits | AkunaFarm</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f8f8f8;
-        }
-        nav {
-            background: #3a8d29ce;
-            padding: 0 32px;
-        }
-        .navbar {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            height: 56px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            position: sticky;
-        }
-        .navbar li {
-            display: inline-block;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 12px 10px;
-            display: flex;
-            align-items: center;
-            transition: background 0.2s, color 0.2s;
-            border-radius: 4px;
-        }
-        .navbar a:hover {
-            background: #a9825a;
-            color: #fffbe7;
-        }
-        .navbar i {
-            margin-right: 8px;
-            font-size: 1.2em;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f8f8f8;
+    }
+
+    /* Header */
+    header {
+        background: #3a8d29ce;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .header-left img {
+        height: 48px;
+        margin-right: 12px;
+    }
+
+    .header-left h1 {
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    nav {
+        flex: 1 1 100%;
+        margin-top: 10px;
+    }
+
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .navbar li {
+        display: inline-block;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .navbar a:hover {
+        background: #a9825a;
+        color: #fffbe7;
+    }
+
+    .navbar i {
+        margin-right: 6px;
+        font-size: 1.1em;
+    }
+
+    /* Health benefits sections */
+    .health-benefits {
+        padding: 24px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin: 20px auto;
+        max-width: 1000px;
+    }
+
+    .health-benefits h2 {
+        margin-top: 0;
+        color: #4a5d23;
+    }
+
+    .health-benefits p {
+        line-height: 1.6;
+    }
+
+    .health-benefits ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .health-benefits ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .btn-primary {
+        background: #4a5d23;
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        background: #3a491b;
+    }
+
+    .btn-secondary {
+        background: #8d6748;
+        color: #fff;
+    }
+
+    .btn-secondary:hover {
+        background: #704f34;
+    }
+
+    /* Footer */
+    .site-footer {
+        background-color: #3a8d29ce;
+        color: #f1f1f1;
+        padding: 30px 20px;
+        font-family: sans-serif;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .footer-brand .logo {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links a,
+    .footer-contact p,
+    .footer-socials a {
+        color: #f1f1f1;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover,
+    .footer-socials a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-socials .social-icons a {
+        font-size: 18px;
+        margin-right: 12px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        border-top: 1px solid #444;
+        padding-top: 10px;
+        font-size: 13px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         header {
-            background: #3a8d29ce;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 32px;
-            position: sticky;
-        }
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
-        .header-left img {
-            height: 48px;
-            margin-right: 16px;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        /* Health benefits section */
+        nav {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .navbar {
+            flex-direction: column;
+            gap: 8px;
+        }
+
         .health-benefits {
-            padding: 32px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin: 32px 0;
-        }
-        .health-benefits h2 {
-            margin-top: 0;
-            color: #4a5d23;
-        }
-        .health-benefits p {
-            line-height: 1.6;
-        }
-        .health-benefits ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .health-benefits ul li {
-            margin-bottom: 10px;
+            padding: 20px;
+            margin: 16px;
         }
 
-        /* Buttons */
         .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background 0.3s;
+            width: 100%;
+            text-align: center;
         }
-        .btn-primary {
-            background: #4a5d23;
-            color: #fff;
-        }
-        .btn-primary:hover {
-            background: #3a491b;
-        }
-        .btn-secondary {
-            background: #8d6748;
-            color: #fff;
-        }
-        .btn-secondary:hover {
-            background: #704f34;
+    }
+
+    @media (max-width: 480px) {
+        .header-left h1 {
+            font-size: 1.2rem;
         }
 
-        /* Footer */
-        .site-footer {
-          background-color: #3a8d29ce;
-          color: #f1f1f1 ;
-          padding: 40px 20px 20px;
-          font-family: sans-serif;
+        .navbar a {
+            font-size: 0.95rem;
+            padding: 8px 10px;
         }
 
-        .footer-content {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 30px;
-          max-width: 1200px;
-          margin: auto;
+        .health-benefits h2 {
+            font-size: 1.3rem;
         }
 
-        .footer-brand {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
+        .health-benefits p, 
+        .health-benefits ul li {
+            font-size: 0.9rem;
         }
-
-        .footer-brand .logo {
-          width: 60px;
-          margin-bottom: 10px;
-        }
-
-        .footer-links ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        .footer-links a,
-        .footer-contact p,
-        .footer-socials a {
-          color: #f1f1f1;
-          text-decoration: none;
-          font-size: 14px;
-        }
-
-        .footer-links a:hover,
-        .footer-socials a:hover {
-          text-decoration: underline;
-        }
-
-        .footer-socials .social-icons a {
-          font-size: 18px;
-          margin-right: 15px;
-        }
-
-        .footer-bottom {
-          text-align: center;
-          margin-top: 30px;
-          border-top: 1px solid #444;
-          padding-top: 15px;
-          font-size: 13px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-left">
-            <img src="images/image/favicon.png" alt="AkunaFarm Logo">
-            <h1>AKUNAFARMS</h1>
-        </div>
-        <div class="header-left">
-            <nav>
-                <ul class="navbar">
-                    <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="services.html"><i class="fas fa-briefcase"></i>Our Services</a></li>
-                    <li><a href="healthbenefits.html"><i class="fas fa-heartbeat"></i>Health Benefits</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
-                    <li><a href="recipes.html"><i class="fas fa-utensils"></i>Recipes</a></li>
-                    <li><a href="book.html"><i class="fas fa-calendar"></i>Book Now</a></li>
-                    <li><a href="shop.html"><i class="fas fa-store"></i>Shop</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="health-benefits">
-        <h2>Health Benefits of Our Produce</h2>
-        <p>At AkunaFarm, we are committed to providing you with the freshest and healthiest produce. Our organic farming practices ensure that our fruits and vegetables are not only delicious but also packed with nutrients. Here are some of the health benefits you can enjoy:</p>
-        <ul>
-            <li><strong>Rich in Nutrients:</strong> Our produce is grown without synthetic fertilizers or pesticides, ensuring that you get the maximum nutritional value.</li>
-            <li><strong>Supports Immune Health:</strong> Fresh fruits and vegetables are rich in vitamins and antioxidants that help boost your immune system.</li>
-            <li><strong>Promotes Digestive Health:</strong> High fiber content in our produce aids digestion and helps maintain a healthy gut.</li>
-            <li><strong>Reduces Risk of Chronic Diseases:</strong> Regular consumption of fresh produce is linked to a lower risk of heart disease, diabetes, and certain cancers.</li>
-            <li><strong>Sustainable and Eco-Friendly:</strong> By choosing organic, you support sustainable farming practices that benefit both your health and the environment.</li>
-        </ul>
-        <a href="health-tips.html" class="btn btn-primary"><i class="fas fa-book-medical"></i> Buy Health Tips</a>
-    </div>
-
-    <div class="health-benefits">
-        <h2>Why Choose Organic?</h2>
-        <p>Organic farming practices not only produce healthier food but also contribute to a healthier planet. By choosing organic, you are supporting biodiversity, reducing pollution, and promoting sustainable agriculture.</p>
-        <ul>
-            <li><strong>No Harmful Chemicals:</strong> Our produce is free from harmful pesticides and herbicides.</li>
-            <li><strong>Better Taste:</strong> Many people find that organic fruits and vegetables taste better than conventionally grown ones.</li>
-            <li><strong>Supports Local Farmers:</strong> By buying organic, you are often supporting local farmers who practice sustainable agriculture.</li>
-        </ul>
-        <a href="shop.html" class="btn btn-secondary"><i class="fas fa-shopping-basket"></i> Order Fresh Organic Foods</a>
-    </div>
-
-    <div class="health-benefits">
-        <h2>Join Us in Promoting Health and Wellness</h2>
-        <p>We invite you to explore our range of organic produce and experience the health benefits for yourself. Whether you're looking for fresh fruits, vegetables, or herbs, AkunaFarm has something for everyone.</p>
-        <p>Visit our <a href="shop.html">Shop</a> page to browse our selection and make a purchase today!</p>
-    </div>
-
-    <div class="health-benefits">
-        <h2>Book Now</h2>
-        <p>Ready to experience the benefits of organic produce? Book a consultation with our team today!</p>
-        <a href="Book Now.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Your Consultation</a>
-        <p style="margin-top:10px;">Or contact us at: <a href="https://formspree.io/f/xandwgeb">ejeomavickiebrown1@gmail.com</a></p>
-    </div>
-
-    <footer class="site-footer">
-      <div class="footer-content">
-        <!-- Logo & Name -->
-        <div class="footer-brand">
-          <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
-          <h2>AkunaFarms</h2>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Shop.html">Shop</a></li>
-            <li><a href="About Us.html">About Us</a></li>
-            <li><a href="Contact Us.html">Contact</a></li>
-            <li><a href="Recipes.html">Recipes</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p>Email: info@akunafarms.com</p>
-          <p>Phone: +234 801 234 5678</p>
-          <p>Location: Lagos, Nigeria</p>
-        </div>
-
-        <!-- Socials -->
-        <div class="footer-socials">
-          <h4>Follow Us</h4>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
-      </div>
-    </footer>
-</body>
-</html>
+    }
+</style>
