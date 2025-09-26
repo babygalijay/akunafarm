@@ -696,37 +696,24 @@
 }
 </style>
 
-<!-- Footer -->
 <footer class="site-footer">
-  <div class="footer-content">
-    <!-- Logo & Name -->
-    <div class="footer-brand">
+  <div class="footer-top">
+    <!-- Left: Logo & Name -->
+    <div class="footer-left">
       <img src="images/favicon.png" alt="AkunaFarms Logo" class="logo">
       <h2>AkunaFarms</h2>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="contact-us.html">Contact</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-contact">
+    <!-- Center: Contact Info -->
+    <div class="footer-center">
       <h4>Contact</h4>
       <p>Email: info@akunafarms.com</p>
       <p>Phone: +234 801 234 5678</p>
       <p>Location: Lagos, Nigeria</p>
     </div>
 
-    <!-- Socials -->
-    <div class="footer-socials">
+    <!-- Right: Social Icons -->
+    <div class="footer-right">
       <h4>Follow Us</h4>
       <div class="social-icons">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -736,12 +723,96 @@
     </div>
   </div>
 
-  <!-- Copyright -->
+  <!-- Bottom -->
   <div class="footer-bottom">
     <p>&copy; 2025 AkunaFarms. All rights reserved.</p>
   </div>
 </footer>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-</html>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+<style>
+  /* Footer Base */
+.site-footer {
+  background: #2e7d32;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Top Layout: 3 Columns */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: start;
+  text-align: center;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-left .logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* Headings & Text */
+.footer-center h4,
+.footer-right h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-center p,
+.footer-right a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+/* Social Icons */
+.social-icons a {
+  font-size: 18px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffc107;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    align-items: center;
+  }
+}
+
+</style>
